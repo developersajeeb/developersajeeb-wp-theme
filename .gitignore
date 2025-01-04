@@ -1,0 +1,56 @@
+nbproject
+src/nbproject
+src/wp-config.php
+src/wp-content/cache/*
+tools/*
+feedback/*
+database/old/*
+docs/*
+review/*
+design/*
+backup/*
+live/*
+html/bower_components/*
+html/node_modules/*
+src/wp-content/themes/**/bower_components/*
+src/wp-content/themes/**/node_modules/*
+src/wp-content/uploads/wpcf7_captcha/**
+#all node modules ignore
+**/bower_components/**
+**/node_modules/**
+# ignore all files start with . (dot)
+.htaccess
+# ignore all files that start with ~
+~*
+# OS generated files #
+######################
+.DS_Store
+.DS_Store?
+.idea
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+.vscode
+# ignore log files and databases
+*.log
+ ignore packaged files
+*.7z
+*.dmg
+*.gz
+*.iso
+*.jar
+*.rar
+*.tar
+*.zip
+# ignore compiled files
+*.com
+*.class
+*.dll
+*.exe
+*.o
+*.so
+# Any video/Audio files
+# *.mp4
+*.mp3

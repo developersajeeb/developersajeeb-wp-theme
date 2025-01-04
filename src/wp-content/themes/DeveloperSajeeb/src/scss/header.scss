@@ -1,0 +1,308 @@
+// Variables
+@use "variables" as vars;
+
+.top-navbar-container {
+    background-color: vars.$primary-dark;
+    color: vars.$text-white;
+    padding: 20px 0px;
+
+    .navbar-wrap {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        align-items: center;
+
+        @media screen and (max-width: 1024px) {
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+        @media screen and (max-width: 767px) {
+            .top-bar-logo {
+                max-width: 120px !important;
+            }
+        }
+
+        .top-bar-logo {
+            max-width: 160px;
+            width: 100%;
+        }
+
+        .top-main-menu {
+            display: flex;
+            justify-content: center;
+
+            @media screen and (max-width: 1024px) {
+                display: none;
+            }
+
+            ul {
+                display: flex;
+                list-style: none;
+                gap: 30px;
+
+                li {
+                    &.current-menu-item a {
+                        color: vars.$primary-color;
+                    }
+
+                    a {
+                        font-size: 16px;
+                        line-height: 22px;
+                        font-weight: 500;
+                        padding: 5px;
+                        text-decoration: none;
+                        color: vars.$text-white;
+                        transition: all 0.3s ease-in-out;
+                        white-space: nowrap;
+
+                        &:hover {
+                            color: vars.$primary-color;
+                        }
+                    }
+                }
+            }
+        }
+
+        .menu-lets-talk-container {
+
+            .lets-talk-wrap {
+                display: flex;
+                align-items: center;
+                gap: 21px;
+                width: 100%;
+                justify-content: end;
+
+                .lets-talk-btn {
+                    text-decoration: none;
+                    color: vars.$text-white;
+                    text-transform: uppercase;
+                    font-size: 17px;
+                    line-height: 20px;
+                    font-weight: bold;
+                    padding: 6px 0px;
+                    position: relative;
+                    display: inline-block;
+                    overflow: hidden;
+                    letter-spacing: 2px;
+
+                    &::after {
+                        content: '';
+                        position: absolute;
+                        left: 0;
+                        bottom: 0;
+                        width: 100%;
+                        height: 2px;
+                        background-color: vars.$text-white;
+                        transform: scaleX(0);
+                        transform-origin: left;
+                        transition: transform 0.3s ease-in-out;
+                    }
+
+                    &:hover::after {
+                        transform: scaleX(1);
+                    }
+                }
+
+                .lets-talk-hamburger {
+                    max-width: 50px;
+                    width: 100%;
+                    height: 50px;
+                    background-color: vars.$primary-color;
+                    border-radius: 50px;
+                    cursor: pointer;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+
+                    img {
+                        width: 25px;
+                    }
+
+                    @media screen and (max-width: 767px) {
+                        max-width: 40px;
+                        height: 40px;
+
+                        img {
+                            width: 20px;
+                        }
+                    }
+                }
+
+            }
+
+            .lets-talk-aside-overly {
+                background-color: #0e0e0e9c;
+                position: absolute;
+                top: 0;
+                right: 0;
+                left: 100%;
+                bottom: 0;
+                z-index: 9998;
+                transition: left 0.4s ease-in-out;
+
+                &.active {
+                    left: 0;
+                }
+            }
+
+            .lets-talk-aside {
+                max-width: 400px;
+                background-color: vars.$primary-dark;
+                position: fixed;
+                height: 100%;
+                top: 0px;
+                right: -100%;
+                bottom: 0;
+                z-index: 9999;
+                transition: all 0.5s ease-in-out;
+
+                @media screen and (max-width: 1024px) {
+                    max-width: 320px;
+                    width: 100%;
+                }
+
+                &.lets-talk-aside-active {
+                    right: 0;
+                }
+
+                .sidebar-menu-close {
+                    width: 38px;
+                    height: 38px;
+                    font-size: 22px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    background-color: #353535;
+                    cursor: pointer;
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                }
+
+                .lets-talk-aside-wrap {
+                    padding: 80px 40px 50px 40px;
+
+                    @media screen and (max-width: 1024px) {
+                        padding: 40px 20px 20px 20px;
+                        display: none;
+                    }
+
+                    .tag-line {
+                        margin-top: 30px;
+                        margin-bottom: 40px;
+                    }
+
+                    .sidebar-contact-heading {
+                        font-size: 20px;
+                        font-weight: 400;
+                        line-height: 28px;
+                    }
+
+                    .sidebar-contact-list {
+                        list-style: none;
+                        margin-top: 22px;
+
+                        .sidebar-contact-item {
+                            display: flex;
+                            align-items: center;
+                            gap: 14px;
+                            margin-bottom: 16px;
+                            animation-duration: 0.3s;
+
+                            .contact-item-icon {
+                                font-size: 18px;
+                                width: 20px;
+                                color: vars.$primary-color;
+                                display: flex;
+                                justify-content: end;
+                            }
+
+                            .contact-text {
+                                color: vars.$text-gray;
+                                text-decoration: none;
+                            }
+
+                            a:hover {
+                                color: vars.$text-white;
+                            }
+                        }
+                    }
+
+                    .sidebar-follow-heading {
+                        font-size: 20px;
+                        font-weight: 400;
+                        line-height: 28px;
+                        margin-top: 35px;
+                    }
+
+                    .social-follow-list {
+                        list-style: none;
+                        margin-top: 25px;
+                        display: flex;
+                        flex-wrap: wrap;
+                        gap: 8px;
+
+                        .social-icon {
+                            max-width: 39px;
+                            width: 39px;
+                            max-height: 39px;
+                            height: 39px;
+                            border-radius: 30px;
+                            background: vars.$text-white;
+                            color: vars.$secondary-dark;
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                            text-decoration: none;
+                        }
+                    }
+                }
+
+                .mobile-sidebar-menu {
+                    padding: 70px 20px;
+                    display: none;
+
+                    @media screen and (max-width: 1024px) {
+                        display: block;
+                    }
+
+                    .mobile-menu-list {
+                        .menu-main-menu-container {
+                            ul {
+                                list-style: none;
+                                margin-top: 40px;
+
+                                li {
+                                    &.current-menu-item a {
+                                        color: vars.$primary-color;
+                                    }
+
+                                    &:first-child {
+                                        border-top: 1px solid #3f3f3f;
+                                    }
+
+                                    a {
+                                        font-size: 16px;
+                                        line-height: 22px;
+                                        font-weight: 500;
+                                        padding: 15px 0px;
+                                        text-decoration: none;
+                                        color: vars.$text-white;
+                                        transition: all 0.3s ease-in-out;
+                                        white-space: nowrap;
+                                        display: block;
+                                        border-bottom: 1px solid #3f3f3f;
+
+                                        &:hover {
+                                            color: vars.$primary-color;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+
+            }
+        }
+    }
+
+}

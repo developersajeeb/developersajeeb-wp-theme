@@ -1,0 +1,11 @@
+==================
+
+WP Admin:
+U: sajeeb
+p: sajeeb
+
+==================
+
+Database Local:
+U: root
+P: " "
