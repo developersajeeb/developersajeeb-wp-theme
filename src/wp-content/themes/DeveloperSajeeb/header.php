@@ -10,7 +10,7 @@
 <body <?php body_class(); ?>>
     <!-- Header Content Starts Here -->
     <nav class="top-navbar-container">
-        <div class="container navbar-wrap">
+        <div class="navbar-wrap">
             <div>
                 <a href="<?php echo home_url(); ?>"><img class="top-bar-logo"
                         src="<?php echo get_theme_mod('devsajeeb_logo'); ?>" alt="developer sajeeb"></a>

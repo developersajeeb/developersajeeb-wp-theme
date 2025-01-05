@@ -1,7 +1,35 @@
+@use "variables" as vars;
+
 .container {
-    max-width: 1650px;
+    max-width: 1320px;
     padding-right: 15px;
     padding-left: 15px;
     margin-right: auto;
     margin-left: auto;
+}
+
+.primary-color-btn {
+    font-size: 15px;
+    font-weight: 600;
+    line-height: 1.2;
+    text-transform: capitalize;
+    text-decoration: none;
+    border: none;
+    border-radius: 15px;
+    padding: 16px 35px;
+    background-color: vars.$primary-color;
+    color: vars.$secondary-dark;
+    transition: all 0.3s ease-in-out;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+
+    &:hover {
+        background-color: vars.$secondary-dark;
+        color: vars.$text-white;
+    }
+
+    svg {
+      font-size: 12px;  
+    }
 }

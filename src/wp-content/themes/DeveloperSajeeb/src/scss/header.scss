@@ -4,16 +4,20 @@
 .top-navbar-container {
     background-color: vars.$primary-dark;
     color: vars.$text-white;
-    padding: 20px 0px;
+    padding: 20px 15px;
 
     .navbar-wrap {
         display: grid;
         grid-template-columns: repeat(3, minmax(0, 1fr));
         align-items: center;
+        max-width: 1650px;
+        margin-right: auto;
+        margin-left: auto;
 
         @media screen and (max-width: 1024px) {
             grid-template-columns: repeat(2, minmax(0, 1fr));
         }
+
         @media screen and (max-width: 767px) {
             .top-bar-logo {
                 max-width: 120px !important;
@@ -153,6 +157,8 @@
                 bottom: 0;
                 z-index: 9999;
                 transition: all 0.5s ease-in-out;
+                overflow-y: auto;
+                scrollbar-width: none;
 
                 @media screen and (max-width: 1024px) {
                     max-width: 320px;

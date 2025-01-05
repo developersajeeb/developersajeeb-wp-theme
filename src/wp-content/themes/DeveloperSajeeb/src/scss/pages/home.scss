@@ -1,0 +1,96 @@
+// Variables
+@use "variables" as vars;
+
+.hero-bg {
+    background-color: vars.$primary-dark;
+    padding: 80px 15px;
+
+    .hero-section-container {
+        max-width: 1650px;
+        margin-right: auto;
+        margin-left: auto;
+        display: grid;
+        grid-template-columns: repeat(11, minmax(0, 1fr));
+        gap: 30px;
+        align-items: center;
+        
+        .intro-text {
+            grid-column: span 4 / span 4;
+
+            h3 {
+                color: vars.$text-gray;
+                font-size: 45px;
+                font-weight: 400;
+                line-height: 1em;
+                margin-bottom: 10px;
+            }
+
+            h2 {
+                color: vars.$primary-color;
+                font-size: 65px;
+                font-weight: 700;
+                line-height: 1.1em;
+                letter-spacing: -0.03em;
+                margin-bottom: 5px;
+            }
+
+            h1 {
+                color: vars.$text-white;
+                font-size: 65px;
+                font-weight: 400;
+                line-height: 1.1em;
+                letter-spacing: -0.03em;
+            }
+
+            p {
+                margin: 40px 0px;
+                font-size: 16px;
+                font-weight: 400;
+                line-height: 1.85;
+                color: vars.$text-gray;
+            }
+        }
+
+        .middle-image {
+            grid-column: span 3 / span 3;
+        }
+
+        .hero-right-content {
+            grid-column: span 4 / span 4;
+            display: flex;
+            justify-content: end;
+
+            .right-content-wrap {
+                background-color: vars.$secondary-dark;
+                border-radius: 16px;
+                padding: 40px;
+                color: vars.$text-gray;
+
+                h3 {
+                    font-size: 40px;
+                    font-weight: 500;
+                    line-height: 1;
+                    color: vars.$primary-color;
+                    padding: 25px 0px 15px 0px;
+
+                    &:first-child {
+                        padding-top: 0px;
+                    }
+                }
+
+                p {
+                    font-size: 16px;
+                    font-weight: 400;
+                    line-height: 1.4;
+                    padding-bottom: 25px;
+                    border-bottom: 1px solid #353535;
+
+                    &:last-child {
+                        padding-bottom: 0px;
+                        border-bottom: none;
+                    }
+                }
+            }
+        }
+    }
+}

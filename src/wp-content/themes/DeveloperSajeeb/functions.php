@@ -18,4 +18,7 @@ include_once('inc/enqueue.php');
 // WordPress Customization Function
 include_once('inc/wp-customize.php');
 
+// Mime Types file
+include_once('inc/mime-types.php');
+
 ?>
