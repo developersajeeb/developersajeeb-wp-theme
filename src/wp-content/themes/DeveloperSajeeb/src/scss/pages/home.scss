@@ -1,8 +1,8 @@
 // Variables
 @use "variables" as vars;
 
+// Hero section image
 .hero-bg {
-    background-color: vars.$primary-dark;
     padding: 80px 15px;
 
     .hero-section-container {
@@ -13,6 +13,10 @@
         grid-template-columns: repeat(11, minmax(0, 1fr));
         gap: 30px;
         align-items: center;
+
+        @media screen and (max-width: 767px) {
+            grid-template-columns: repeat(1, minmax(0, 1fr));
+        }
         
         .intro-text {
             grid-column: span 4 / span 4;
@@ -44,19 +48,83 @@
 
             p {
                 margin: 40px 0px;
-                font-size: 16px;
-                font-weight: 400;
-                line-height: 1.85;
-                color: vars.$text-gray;
             }
+
+            @media screen and (max-width: 1366px) {
+                h3 {
+                    font-size: 35px;
+                }
+
+                h2 {
+                    font-size: 54px;
+                }
+
+                h1 {
+                    font-size: 54px;
+                }
+            }
+
+            @media screen and (max-width: 1200px) {
+                h3 {
+                    font-size: 30px;
+                }
+
+                h2 {
+                    font-size: 46px;
+                }
+
+                h1 {
+                    font-size: 46px;
+                }
+            }
+
+            @media screen and (max-width: 1024px) {
+                grid-column: span 6 / span 6;
+            }
+
+            @media screen and (max-width: 767px) {
+                grid-column: span 1 / span 1;
+
+                h2 {
+                    font-size: 42px;
+                }
+
+                h1 {
+                    font-size: 42px;
+                }
+
+                p {
+                    margin: 30px 0px;
+                }
+            }
+
         }
 
         .middle-image {
-            grid-column: span 3 / span 3;
+            grid-column: span 4 / span 4;
+
+            img {
+                max-width: 100%;
+                width: 100%;
+            }
+
+            @media screen and (max-width: 1024px) {
+                display: none;
+            }
+            
+            @media screen and (max-width: 767px) {
+                grid-column: span 1 / span 1;
+                display: flex;
+                justify-content: center;
+
+                img {
+                    max-width: 500px;
+                }
+            }
         }
 
         .hero-right-content {
-            grid-column: span 4 / span 4;
+            grid-column: span 3 / span 3;
             display: flex;
             justify-content: end;
 
@@ -65,6 +133,11 @@
                 border-radius: 16px;
                 padding: 40px;
                 color: vars.$text-gray;
+
+                @media screen and (max-width: 1200px) {
+                    padding: 40px 30px;
+                    width: 100%;
+                }
 
                 h3 {
                     font-size: 40px;
@@ -79,8 +152,8 @@
                 }
 
                 p {
-                    font-size: 16px;
-                    font-weight: 400;
+                    font-size: 24px;
+                    font-weight: 600;
                     line-height: 1.4;
                     padding-bottom: 25px;
                     border-bottom: 1px solid #353535;
@@ -91,6 +164,52 @@
                     }
                 }
             }
+
+            @media screen and (max-width: 1024px) {
+                grid-column: span 5 / span 5;
+            }
+
+            @media screen and (max-width: 767px) {
+                grid-column: span 1 / span 1;
+            }
+        }
+    }
+
+    .responsive-image {
+        display: flex;
+        justify-content: center;
+        display: none;
+
+        @media screen and (min-width: 767px) and (max-width: 1024px) {
+            display: block;
+        }
+    }
+}
+
+// About us section
+.about-us-container {
+    display: grid;
+    grid-template-columns: repeat(11, minmax(0, 1fr));
+    gap: 30px;
+    align-items: center;
+    padding-top: 130px;
+    padding-bottom: 130px;
+    background-color: vars.$secondary-dark;
+
+    .about-us-content {
+        grid-column: span 6 / span 6;
+
+        .about-us-description {
+            margin: 40px 0px 45px 0px;
+        }
+    }
+    
+    .about-us-images {
+        grid-column: span 5 / span 5;
+
+        img {
+            width: 100%;
+            max-width: 100%;
         }
     }
 }

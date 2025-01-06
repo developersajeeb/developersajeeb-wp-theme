@@ -1,5 +1,25 @@
 @use "variables" as vars;
 
+body {
+    background-color: vars.$primary-dark;
+}
+
+.primary-bg-color {
+    background-color: vars.$primary-color;
+}
+
+.dark-bg-color {
+    background-color: vars.$primary-dark;
+}
+
+.secondary-bg-color {
+    background-color: vars.$secondary-dark;
+}
+
+.text-primary-color {
+    color: vars.$primary-color;
+}
+
 .container {
     max-width: 1320px;
     padding-right: 15px;
@@ -32,4 +52,26 @@
     svg {
       font-size: 12px;  
     }
+}
+
+.subtitle {
+    font-size: 22px;
+    font-weight: 500;
+    line-height: 1.2;
+    margin-bottom: 15px;
+    color: vars.$text-gray;
+}
+
+.title {
+    font-size: 45px;
+    font-weight: 500;
+    line-height: 1.2;
+    color: vars.$text-white;
+}
+
+.content {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.85;
+    color: vars.$text-gray;
 }
