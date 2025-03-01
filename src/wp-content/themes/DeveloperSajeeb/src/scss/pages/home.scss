@@ -3,7 +3,15 @@
 
 // Hero section image
 .hero-bg {
-    padding: 80px 15px;
+    padding: 180px 15px 80px 15px;
+
+    @media screen and (max-width: 1024px) {
+        padding-top: 140px;
+    }
+
+    @media screen and (max-width: 767px) {
+        padding: 120px 15px 56px 15px;
+    }
 
     .hero-section-container {
         max-width: 1650px;
@@ -17,7 +25,7 @@
         @media screen and (max-width: 767px) {
             grid-template-columns: repeat(1, minmax(0, 1fr));
         }
-        
+
         .intro-text {
             grid-column: span 4 / span 4;
 
@@ -94,7 +102,7 @@
                 }
 
                 p {
-                    margin: 30px 0px;
+                    margin: 24px 0px;
                 }
             }
 
@@ -111,7 +119,7 @@
             @media screen and (max-width: 1024px) {
                 display: none;
             }
-            
+
             @media screen and (max-width: 767px) {
                 grid-column: span 1 / span 1;
                 display: flex;
@@ -176,9 +184,13 @@
     }
 
     .responsive-image {
-        display: flex;
-        justify-content: center;
         display: none;
+        padding-top: 30px;
+
+        .responsive-image-wrap {
+            display: flex;
+            justify-content: center;
+        }
 
         @media screen and (min-width: 767px) and (max-width: 1024px) {
             display: block;
@@ -195,21 +207,148 @@
     padding-top: 130px;
     padding-bottom: 130px;
     background-color: vars.$secondary-dark;
+    position: relative;
+
+    @media screen and (max-width: 1024px) {
+        align-items: start;
+        grid-template-columns: repeat(1, minmax(0, 1fr));
+        padding-top: 90px;
+        padding-bottom: 90px;
+    }
+
+    @media screen and (max-width: 767px) {
+        padding-top: 60px;
+        padding-bottom: 60px;
+    }
 
     .about-us-content {
         grid-column: span 6 / span 6;
+        z-index: 1;
+
+        @media screen and (max-width: 1024px) {
+            grid-column: span 1 / span 1;
+            background-image: url('./global-shape.svg');
+        }
 
         .about-us-description {
             margin: 40px 0px 45px 0px;
         }
+
+        .skills-category {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 16px;
+
+            @media screen and (max-width: 640px) {
+                grid-template-columns: repeat(1, minmax(0, 1fr));
+            }
+
+            li {
+                display: flex;
+                align-items: center;
+
+                .list-icon {
+                    color: vars.$primary-color;
+                    font-size: 28px;
+                    margin-right: 20px;
+                }
+
+                .list-text {
+                    color: vars.$text-white;
+                    font-size: 22px;
+                    line-height: 1.4;
+                    font-weight: 500;
+                }
+            }
+        }
+
     }
-    
+
+    .glob-img-for-bg {
+        display: none;
+        position: absolute;
+        z-index: 0;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        margin: auto;
+        opacity: 0.4;
+
+        @media screen and (max-width: 1024px) {
+            display: block;
+        }
+
+        @media screen and (max-width: 520px) {
+            width: 100%;
+        }
+    }
+
     .about-us-images {
         grid-column: span 5 / span 5;
 
-        img {
+        @media screen and (max-width: 1024px) {
+            display: none;
+        }
+
+        .glob-img {
             width: 100%;
             max-width: 100%;
+        }
+    }
+
+    @media screen and (max-width: 1024px) {
+        .about-us-content {
+            .about-us-description {
+                margin: 30px 0px 35px 0px;
+            }
+        }
+    }
+}
+
+// Work Experience section
+.experience-section-wrap {
+    display: grid;
+    grid-template-columns: repeat(12, minmax(0, 1fr));
+    gap: 40px;
+    padding-top: 130px;
+    padding-bottom: 130px;
+
+    .icon-wrap {
+        padding-top: 90px;
+        grid-column: span 3 / span 3;
+
+        .icon {
+            width: 270px;
+            height: 270px;
+            background-color: vars.$secondary-light;
+            border-radius: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border: 1px solid vars.$border-color;
+
+            svg {
+                font-size: 135px;
+                color: vars.$primary-color;
+            }
+        }
+    }
+
+    .experience-content {
+        grid-column: span 9 / span 9;
+
+        .experience-wrap {
+            margin-top: 60px;
+            padding: 60px;
+            background-color: vars.$secondary-light;
+            border-radius: 16px;
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+
+            .experience-card {
+                
+            }
         }
     }
 }

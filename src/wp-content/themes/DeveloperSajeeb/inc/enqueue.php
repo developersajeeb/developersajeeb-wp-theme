@@ -11,11 +11,17 @@ function css_js_files_calling() {
     // Enqueue the stylesheet (from Gulp compilation)
     wp_enqueue_style('devsajeeb-style', get_template_directory_uri() . '/assets/css/style.css', array(), '1.0.0');
 
+    // Enqueue the GSAP and other helper Js files
+    wp_enqueue_script('devsajeeb-lenis', get_template_directory_uri() . '/src/js/gsap/lenis.min.js', array(), '1.1.19', true);
+    wp_enqueue_script('devsajeeb-gsap', get_template_directory_uri() . '/src/js/gsap/gsap.min.js', array(), '3.12.7', true);
+    wp_enqueue_script('devsajeeb-gsap-scrollTrigger', get_template_directory_uri() . '/src/js/gsap/ScrollTrigger.min.js', array(), '3.12.7', true);
+
     // Enqueue the main JavaScript file (from Gulp compilation)
     wp_enqueue_script('devsajeeb-scripts', get_template_directory_uri() . '/assets/js/main.js', array('jquery'), '1.0.0', true);
 
     // Enqueue the Font Awesome Js
-    wp_enqueue_script('devsajeeb-fontawesome-js', get_template_directory_uri() . '/src/js/fontawesome/all.min.js', array('jquery'), '6.7.2', true);
+    wp_enqueue_script('devsajeeb-fontawesome-js', get_template_directory_uri() . '/src/js/fontawesome/all.min.js', array(), '6.7.2', true);
+    
 
     // Enqueue jQuery (WordPress has built-in jQuery)
     wp_enqueue_script('jquery');
