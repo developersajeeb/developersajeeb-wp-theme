@@ -72,8 +72,8 @@ $frontpage_id = get_option('page_on_front');
     </section>
     <!-- About Us section end -->
 
-    <!-- Work Experience section start -->
-     <section class="line-bg">
+    <section class="line-bg">
+        <!-- Work Experience section start -->
         <div class="container experience-section-wrap">
             <div class="icon-wrap">
                 <div class="icon">
@@ -87,18 +87,72 @@ $frontpage_id = get_option('page_on_front');
 
                 <div class="experience-wrap">
                     <div class="experience-card">
-                        <span><i class="fa-solid fa-arrow-up-right-dots"></i></span>
-                        <div>
+                        <span class="icon"><i class="fa-solid fa-arrow-up-right-dots"></i></span>
+                        <div class="details">
                             <p>2023 - Present</p>
                             <h6>Jr. Web Developer</h6>
-                            <p>CodersBucket</p>
+                            <span class="heading-font">CodersBucket</span>
+                        </div>
+                    </div>
+                    <div class="experience-card">
+                        <span class="icon"><i class="fa-solid fa-arrow-up-right-dots"></i></span>
+                        <div class="details">
+                            <p>2023 - Present</p>
+                            <h6>Jr. Web Developer</h6>
+                            <span class="heading-font">CodersBucket</span>
+                        </div>
+                    </div>
+                    <div class="experience-card">
+                        <span class="icon"><i class="fa-solid fa-arrow-up-right-dots"></i></span>
+                        <div class="details">
+                            <p>2023 - Present</p>
+                            <h6>Jr. Web Developer</h6>
+                            <span class="heading-font">CodersBucket</span>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
+        <!-- Work Experience section end -->
+
+        <div class="container services-section-wrap">
+            <div class="services-heading">
+                <h4 class="subtitle heading-font">Popular Services</h4>
+                <h2 class="title">My <span class="text-primary-color">Special Service</span> For your Business Development</h2>
+            </div>
+
+            <ul class="services-items-wrap">
+                <li class="services-item">
+                    <span class="services-item-number">01</span>
+                    <div>
+                        <p class="service-name heading-font">Web Application Development</p>
+                        <p class="service-description">Building Scalable Web Applications</p>
+                    </div>
+                </li>
+                <li class="services-item">
+                    <span class="services-item-number">01</span>
+                    <div>
+                        <p class="service-name heading-font">Web Application Development</p>
+                        <p class="service-description">Building Scalable Web Applications</p>
+                    </div>
+                </li>
+                <li class="services-item">
+                    <span class="services-item-number">01</span>
+                    <div>
+                        <p class="service-name heading-font">Web Application Development</p>
+                        <p class="service-description">Building Scalable Web Applications</p>
+                    </div>
+                </li>
+                <li class="services-item">
+                    <span class="services-item-number">01</span>
+                    <div>
+                        <p class="service-name heading-font">Web Application Development</p>
+                        <p class="service-description">Building Scalable Web Applications</p>
+                    </div>
+                </li>
+            </ul>
+        </div>
      </section>
-    <!-- Work Experience section end -->
 
 </main>
 

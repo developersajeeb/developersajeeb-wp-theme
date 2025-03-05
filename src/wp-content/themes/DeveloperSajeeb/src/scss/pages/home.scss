@@ -30,7 +30,7 @@
             grid-column: span 4 / span 4;
 
             h3 {
-                color: vars.$text-gray;
+                color: vars.$color-gray;
                 font-size: 45px;
                 font-weight: 400;
                 line-height: 1em;
@@ -47,7 +47,7 @@
             }
 
             h1 {
-                color: vars.$text-white;
+                color: vars.$color-white;
                 font-size: 65px;
                 font-weight: 400;
                 line-height: 1.1em;
@@ -140,7 +140,7 @@
                 background-color: vars.$secondary-dark;
                 border-radius: 16px;
                 padding: 40px;
-                color: vars.$text-gray;
+                color: vars.$color-gray;
 
                 @media screen and (max-width: 1200px) {
                     padding: 40px 30px;
@@ -254,7 +254,7 @@
                 }
 
                 .list-text {
-                    color: vars.$text-white;
+                    color: vars.$color-white;
                     font-size: 22px;
                     line-height: 1.4;
                     font-weight: 500;
@@ -314,11 +314,28 @@
     padding-top: 130px;
     padding-bottom: 130px;
 
+    @media screen and (max-width: 1024px) {
+        grid-template-columns: repeat(1, minmax(0, 1fr));
+        padding-top: 90px;
+        padding-bottom: 90px;
+    }
+
+    @media screen and (max-width: 767px) {
+        padding-top: 60px;
+        padding-bottom: 60px;
+    }
+
     .icon-wrap {
         padding-top: 90px;
         grid-column: span 3 / span 3;
 
+        @media screen and (max-width: 1024px) {
+            padding-top: 0px;
+            grid-column: span 1 / span 1;
+        }
+
         .icon {
+            max-width: 270px;
             width: 270px;
             height: 270px;
             background-color: vars.$secondary-light;
@@ -326,17 +343,32 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            border: 1px solid vars.$border-color;
+            border: 1px solid vars.$gray-border-color;
 
             svg {
                 font-size: 135px;
                 color: vars.$primary-color;
+            }
+
+            @media screen and (max-width: 1200px) {
+                max-width: 200px;
+                width: 200px;
+                height: 200px;
+
+                svg {
+                    font-size: 110px;
+                    color: vars.$primary-color;
+                }
             }
         }
     }
 
     .experience-content {
         grid-column: span 9 / span 9;
+
+        @media screen and (max-width: 1024px) {
+            grid-column: span 1 / span 1;
+        }
 
         .experience-wrap {
             margin-top: 60px;
@@ -345,9 +377,180 @@
             border-radius: 16px;
             display: grid;
             grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 60px;
+
+            @media screen and (max-width: 1024px) {
+                padding: 40px;
+                margin-top: 40px;
+                gap: 40px;
+            }
+
+            @media screen and (max-width: 767px) {
+                grid-template-columns: repeat(1, minmax(0, 1fr));
+                padding: 30px;
+                margin-top: 30px;
+                gap: 30px;
+            }
 
             .experience-card {
-                
+                &:hover {
+                    .icon {
+                        background-color: vars.$primary-color;
+
+                        svg {
+                            color: #353535;
+                        }
+                    }
+                }
+
+                display: flex;
+                align-items: start;
+                gap: 20px;
+
+                .icon {
+                    max-width: 40px;
+                    width: 40px;
+                    height: 40px;
+                    background-color: vars.$secondary-dark;
+                    border-radius: 100%;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    transition: 0.3s all;
+
+                    svg {
+                        font-size: 16px;
+                        color: vars.$color-gray;
+                    }
+                }
+
+                .details {
+                    p {
+                        font-size: 16px;
+                        font-weight: 400;
+                        text-transform: uppercase;
+                        margin-bottom: 20px;
+                        color: vars.$color-gray;
+                    }
+
+                    h6 {
+                        font-size: 24px;
+                        font-weight: 500px;
+                        color: vars.$color-white;
+                    }
+
+                    span {
+                        font-size: 22px;
+                        font-weight: 600;
+                        display: block;
+                        color: vars.$color-gray;
+                        margin-top: 12px;
+                    }
+
+                    @media screen and (max-width: 767px) {
+                        h6 {
+                            font-size: 20px;
+                        }
+
+                        span {
+                            font-size: 18px;
+                            margin-top: 8px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+// Service section style
+.services-section-wrap {
+    padding-bottom: 130px;
+
+    @media screen and (max-width: 1024px) {
+        padding-bottom: 90px;
+    }
+
+    .services-heading {
+        text-align: center;
+        max-width: 696px;
+        margin: 0px auto;
+        margin-bottom: 60px;
+    }
+
+    @media screen and (max-width: 767px) {
+        padding-bottom: 60px;
+
+        .services-heading {
+            margin-bottom: 35px;
+        }
+    }
+
+    .services-items-wrap {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 30px;
+
+        @media screen and (max-width: 767px) {
+            grid-template-columns: repeat(1, minmax(0, 1fr));
+            gap: 20px;   
+        }
+
+        .services-item {
+            background-color: vars.$secondary-light;
+            border: 1px solid vars.$gray-border-color;
+            border-radius: 16px;
+            padding: 35px 50px;
+            display: flex;
+            flex-direction: row;
+            gap: 45px;
+            transition: 0.3s all;
+
+            @media screen and (max-width: 1024px) {
+                gap: 25px;
+                padding: 25px 35px;
+            }
+
+            &:hover {
+                border-color: vars.$primary-color;
+
+                .services-item-number {
+                    color: vars.$color-white;
+                }
+            }
+
+            @media screen and (max-width: 767px) {
+                padding: 18px 25px;
+            }
+
+            .services-item-number {
+                font-size: 24px;
+                font-weight: 400;
+                color: vars.$color-gray;
+                transition: 0.3s all;
+            }
+
+            .service-name {
+                font-size: 28px;
+                font-weight: 700;
+                line-height: 1.2;
+                color: vars.$color-white;
+
+                @media screen and (max-width: 1024px) {
+                    font-size: 22px;
+                }
+            }
+
+            .service-description {
+                font-size: 16px;
+                font-weight: 400;
+                line-height: 1.8;
+                margin-top: 10px;
+                color: vars.$color-gray;
+
+                @media screen and (max-width: 1024px) {
+                    font-size: 14px;
+                }
             }
         }
     }
