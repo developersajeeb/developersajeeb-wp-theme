@@ -154,6 +154,22 @@ $frontpage_id = get_option('page_on_front');
         </div>
      </section>
 
+     <section class="secondary-bg-color">
+        <div class="container skills-section-wrap">
+            <div class="skills-section-content">
+                <div class="skills-content-wrap">
+                    <h4 class="subtitle heading-font">My Skills</h4>
+                    <h2 class="title">Let’s Explore <span class="text-primary-color">Skills & Experience</span></h2>
+                    <p class="content skills-sections-description">My main focus is web development, combining frontend expertise, UI/UX design, and SEO to craft dynamic and engaging web applications. I ensure each project is both visually appealing and optimized for performance and growth.</p>
+                </div>
+
+                <div class="right-image">
+                    <img src="<?php echo get_template_directory_uri(); ?>/img/skills-section-image.png" alt="Skills And Idea Image">
+                </div>
+            </div>
+        </div>
+     </section>
+
 </main>
 
 <?php
