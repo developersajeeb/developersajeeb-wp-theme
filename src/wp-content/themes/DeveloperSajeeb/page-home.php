@@ -13,7 +13,7 @@ $frontpage_id = get_option('page_on_front');
 
 <main>
     <!-- Hero Banner section start -->
-    <section class="hero-bg line-bg">
+    <section class="hero-bg">
         <div class="hero-section-container">
             <div class="intro-text">
                 <h3 class="heading-font">Hello, i’m</h2>
@@ -24,7 +24,7 @@ $frontpage_id = get_option('page_on_front');
             </div>
 
             <div class="middle-image">
-                <img src="http://localhost/developersajeeb/src/wp-content/uploads/2025/01/Sajeeb-Debnath-home.webp" alt="Developer Sajeeb">
+                <img src="http://localhost/websites/developersajeeb/src/wp-content/uploads/2025/03/Sajeeb-Debnath-home.png" alt="Developer Sajeeb">
             </div>
 
             <div class="hero-right-content">
@@ -40,7 +40,7 @@ $frontpage_id = get_option('page_on_front');
         </div>
         <div class="responsive-image">
             <div class="responsive-image-wrap">
-                <img src="http://localhost/developersajeeb/src/wp-content/uploads/2025/01/Sajeeb-Debnath-home.webp" alt="Developer Sajeeb">
+                <img src="http://localhost/websites/developersajeeb/src/wp-content/uploads/2025/03/Sajeeb-Debnath-home.png" alt="Developer Sajeeb">
             </div>
         </div>
     </section>
@@ -72,7 +72,7 @@ $frontpage_id = get_option('page_on_front');
     </section>
     <!-- About Us section end -->
 
-    <section class="line-bg">
+    <section>
         <!-- Work Experience section start -->
         <div class="container experience-section-wrap">
             <div class="icon-wrap">
@@ -114,13 +114,14 @@ $frontpage_id = get_option('page_on_front');
             </div>
         </div>
         <!-- Work Experience section end -->
-
+        
+        <!-- Services section start -->
         <div class="container services-section-wrap">
             <div class="services-heading">
                 <h4 class="subtitle heading-font">Popular Services</h4>
                 <h2 class="title">My <span class="text-primary-color">Special Service</span> For your Business Development</h2>
             </div>
-
+            
             <ul class="services-items-wrap">
                 <li class="services-item">
                     <span class="services-item-number">01</span>
@@ -152,24 +153,103 @@ $frontpage_id = get_option('page_on_front');
                 </li>
             </ul>
         </div>
-     </section>
-
-     <section class="secondary-bg-color">
+        <!-- Services section end -->
+    </section>
+    
+    <!-- Skills section start -->
+    <section class="skills-section-container secondary-bg-color">
         <div class="container skills-section-wrap">
             <div class="skills-section-content">
                 <div class="skills-content-wrap">
                     <h4 class="subtitle heading-font">My Skills</h4>
                     <h2 class="title">Let’s Explore <span class="text-primary-color">Skills & Experience</span></h2>
                     <p class="content skills-sections-description">My main focus is web development, combining frontend expertise, UI/UX design, and SEO to craft dynamic and engaging web applications. I ensure each project is both visually appealing and optimized for performance and growth.</p>
+                    <a href="<?php echo home_url(); ?>/about-us" class="primary-color-btn more-details-btn">More Details <span><i class="fa-solid fa-chevron-right"></i></span></a>
                 </div>
-
+                
                 <div class="right-image">
                     <img src="<?php echo get_template_directory_uri(); ?>/img/skills-section-image.png" alt="Skills And Idea Image">
                 </div>
             </div>
+            
+            <div class="skills-items-wrap">
+                <div class="item">
+                    <img src="http://localhost/websites/developersajeeb/src/wp-content/uploads/2025/03/html-5.png" alt="Html">
+                    <p>HTML5</p>
+                </div>
+                <div class="item">
+                    <img src="http://localhost/websites/developersajeeb/src/wp-content/uploads/2025/03/html-5.png" alt="Html">
+                    <p>HTML5</p>
+                </div>
+                <div class="item">
+                    <img src="http://localhost/websites/developersajeeb/src/wp-content/uploads/2025/03/html-5.png" alt="Html">
+                    <p>HTML5</p>
+                </div>
+                <div class="item">
+                    <img src="http://localhost/websites/developersajeeb/src/wp-content/uploads/2025/03/html-5.png" alt="Html">
+                    <p>HTML5</p>
+                </div>
+                <div class="item">
+                    <img src="http://localhost/websites/developersajeeb/src/wp-content/uploads/2025/03/html-5.png" alt="Html">
+                    <p>HTML5</p>
+                </div>
+                <div class="item">
+                    <img src="http://localhost/websites/developersajeeb/src/wp-content/uploads/2025/03/html-5.png" alt="Html">
+                    <p>HTML5</p>
+                </div>
+            </div>
         </div>
-     </section>
 
+        <div class="bg-color"></div>
+    </section>
+    <!-- Skills section end -->
+
+    <!-- Portfolio section Start -->
+     <section class="container portfolio-section-wrap">
+            <div class="services-heading">
+                <h4 class="subtitle heading-font">Latest Works</h4>
+                <h2 class="title">Explore My Popular <span class="text-primary-color">Projects</span></h2>
+            </div>
+
+            <ul class="portfolios-category">
+                <li>All</li>
+                <li>WordPress</li>
+                <li>React Js</li>
+                <li>Next Js</li>
+                <li>UI/UX</li>
+            </ul>
+
+            <div class="portfolio-items-wrap">
+                <div class="portfolio-item">
+                    <div class="portfolio-thumbnail">
+                        <span class="portfolio-thumbnail-overly"><img class="overly-logo" src="http://localhost/websites/developersajeeb/src/wp-content/uploads/2025/01/ds-logo.png" alt="Project Logo"></span>
+                        <img class="thumbnail-img" src="http://localhost/websites/developersajeeb/src/wp-content/uploads/2025/03/Screenshot-2024-09-20-120421.png" alt="Name">
+                    </div>
+                    <div class="portfolio-shot-details">
+                        <p class="category">Divi, WooCommerce, WordPress, Yoast</p>
+                        <h4>Mediqlasers is an Ecommerce website made with WordPress</h4>
+                    </div>
+                </div>
+                <div class="portfolio-item">
+                    <div class="portfolio-thumbnail">
+                        <span class="portfolio-thumbnail-overly"><img class="overly-logo" src="http://localhost/websites/developersajeeb/src/wp-content/uploads/2025/01/ds-logo.png" alt="Project Logo"></span>
+                        <img class="thumbnail-img" src="http://localhost/websites/developersajeeb/src/wp-content/uploads/2025/03/Screenshot-2024-09-20-120421.png" alt="Name">
+                    </div>
+                    <div class="portfolio-shot-details">
+                        <p class="category">Divi, WooCommerce, WordPress, Yoast</p>
+                        <h4>Mediqlasers is an Ecommerce website made with WordPress</h4>
+                    </div>
+                </div>
+            </div>
+
+            <div class="portfolio-vew-btn">
+                <a href="<?php echo home_url(); ?>/portfolio" class="primary-color-btn more-details-btn">View More Projects <span><i class="fa-solid fa-chevron-right"></i></span></a>
+            </div>
+     </section>
+    <!-- Portfolio section End -->
+
+    <!-- Clients Testimonials section Start -->
+    <!-- Clients Testimonials section End -->
 </main>
 
 <?php

@@ -2,6 +2,19 @@
 
 body {
     background-color: vars.$primary-dark;
+    position: relative;
+    
+    &:before {
+        content: "";
+        display: block;
+        width: 100%;
+        height: 100%;
+        background: repeating-linear-gradient(to right, #222222, #37353500 1px, #0000000a 100px);
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: -1;
+    }
 }
 
 .primary-bg-color {
@@ -85,21 +98,5 @@ body {
 
     @media screen and (max-width: 767px) {
         line-height: 28px;
-    }
-}
-
-.line-bg {
-    position: relative;
-    
-    &:before {
-        content: "";
-        display: block;
-        width: 100%;
-        height: 100%;
-        background: repeating-linear-gradient(to right, #222222, #37353500 1px, #0000000a 100px);
-        position: absolute;
-        top: 0;
-        left: 0;
-        z-index: -1;
     }
 }

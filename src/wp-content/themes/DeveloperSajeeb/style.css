@@ -33,16 +33,16 @@ body {
 
 ::-webkit-scrollbar {
     width: 6px;
-  }
-  
-  ::-webkit-scrollbar-track {
+}
+
+::-webkit-scrollbar-track {
     background: #c0c0c2;
-  }
-  
-  ::-webkit-scrollbar-thumb {
+}
+
+::-webkit-scrollbar-thumb {
     background: #070707;
     border-radius: 30px;
-  }
+}
 
 /* Smooth Scroll animation Plugin CSS */
 html.lenis,
