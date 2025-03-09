@@ -3,7 +3,7 @@ const lenis = new Lenis();
 // Synchronize Lenis scrolling with GSAP's ScrollTrigger plugin
 lenis.on('scroll', ScrollTrigger.update);
 gsap.ticker.add((time) => {
-  lenis.raf(time * 1000);
+    lenis.raf(time * 1000);
 });
 // Disable lag smoothing in GSAP to prevent any delay in scroll animations
 gsap.ticker.lagSmoothing(0);
@@ -53,4 +53,27 @@ window.addEventListener('scroll', () => {
     } else {
         navbar.classList.remove('menu-sticky');
     }
+});
+
+// Testimonials Swiper Slider
+document.addEventListener("DOMContentLoaded", () => {
+    new Swiper(".TestimonialsSwiper", {
+        slidesPerView: 1,
+        spaceBetween: 30,
+        loop: true,
+        autoplay: {
+            delay: 2000,
+            disableOnInteraction: true,
+        },
+        navigation: {
+            nextEl: ".swiper-button-next",
+            prevEl: ".swiper-button-prev",
+        },
+        breakpoints: {
+            768: {
+                slidesPerView: 2,
+                spaceBetween: 30,
+            },
+        }
+    });
 });

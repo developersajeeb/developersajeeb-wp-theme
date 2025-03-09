@@ -7,6 +7,9 @@ function css_js_files_calling() {
     
     // Enqueue the Font Awesome stylesheet
     wp_enqueue_style('devsajeeb-fontawesome-style', get_template_directory_uri() . '/src/plugins-styles/fontawesome/all.min.css', array(), '6.7.2');
+    
+    // Enqueue the Font Awesome stylesheet
+    wp_enqueue_style('devsajeeb-swiperjs-style', get_template_directory_uri() . '/src/plugins-styles/swiperjs/swiper-bundle.min.css', array(), '11.2.5');
 
     // Enqueue the stylesheet (from Gulp compilation)
     wp_enqueue_style('devsajeeb-style', get_template_directory_uri() . '/assets/css/style.css', array(), '1.0.0');
@@ -22,6 +25,8 @@ function css_js_files_calling() {
     // Enqueue the Font Awesome Js
     wp_enqueue_script('devsajeeb-fontawesome-js', get_template_directory_uri() . '/src/js/fontawesome/all.min.js', array(), '6.7.2', true);
     
+    // Enqueue the SwiperJS file
+    wp_enqueue_script('devsajeeb-swiper-js', get_template_directory_uri() . '/src/js/swiperjs/swiper-bundle.min.js', array(), '11.2.5', true);    
 
     // Enqueue jQuery (WordPress has built-in jQuery)
     wp_enqueue_script('jquery');
