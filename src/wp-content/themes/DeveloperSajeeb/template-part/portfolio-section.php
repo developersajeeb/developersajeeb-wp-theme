@@ -16,8 +16,8 @@
             <div class="portfolio-items-wrap">
                 <div class="portfolio-item">
                     <div class="portfolio-thumbnail">
-                        <span class="portfolio-thumbnail-overly"><img class="overly-logo" src="http://localhost/developersajeeb/src/wp-content/uploads/2025/01/ds-logo.png" alt="Project Logo"></span>
-                        <img class="thumbnail-img" src="http://localhost/developersajeeb/src/wp-content/uploads/2025/03/Screenshot-2024-09-20-120421.png" alt="Name">
+                        <span class="portfolio-thumbnail-overly"><img class="overly-logo" src="https://wp.webtend.net/noxfolio/wp-content/themes/noxfolio/assets/img/logo.png" alt="Project Logo"></span>
+                        <img class="thumbnail-img" src="https://wp.webtend.net/noxfolio/wp-content/uploads/2023/11/project2.jpg" alt="Name">
                     </div>
                     <div class="portfolio-shot-details">
                         <p class="category">Divi, WooCommerce, WordPress, Yoast</p>
@@ -26,8 +26,8 @@
                 </div>
                 <div class="portfolio-item">
                     <div class="portfolio-thumbnail">
-                        <span class="portfolio-thumbnail-overly"><img class="overly-logo" src="http://localhost/developersajeeb/src/wp-content/uploads/2025/01/ds-logo.png" alt="Project Logo"></span>
-                        <img class="thumbnail-img" src="http://localhost/developersajeeb/src/wp-content/uploads/2025/03/Screenshot-2024-09-20-120421.png" alt="Name">
+                        <span class="portfolio-thumbnail-overly"><img class="overly-logo" src="https://wp.webtend.net/noxfolio/wp-content/themes/noxfolio/assets/img/logo.png" alt="Project Logo"></span>
+                        <img class="thumbnail-img" src="https://wp.webtend.net/noxfolio/wp-content/uploads/2023/11/project2.jpg" alt="Name">
                     </div>
                     <div class="portfolio-shot-details">
                         <p class="category">Divi, WooCommerce, WordPress, Yoast</p>

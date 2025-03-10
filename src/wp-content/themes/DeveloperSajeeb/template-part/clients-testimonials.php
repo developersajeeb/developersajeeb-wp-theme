@@ -3,7 +3,7 @@
             <div class="container testimonials-section-wrap">
                 <div class="side-content">
                     <h4 class="subtitle heading-font">Clients Testimonials</h4>
-                    <h2 class="title">I’ve 86+ Clients <span class="text-primary-color">Feedback</span></h2>
+                    <h2 class="title">I’ve received <span class="text-primary-color">Glowing Reviews</span> from my clients!</h2>
                     <p class="content side-sections-description">I consistently deliver high-quality work and maintain strong client satisfaction, turning their visions into reality.</p>
 
                     <div class="swiper-button-wrap">
@@ -18,7 +18,7 @@
                             <div class="swiper-slide testimonials-card">
                                 <div class="client-image">
                                     <div class="quote-icon"><i class="fa-solid fa-quote-left"></i></div>
-                                    <img src="http://localhost/developersajeeb/src/wp-content/uploads/2025/03/rohit-scaled-1.jpg" alt="Client Image">
+                                    <img src="https://wp.webtend.net/noxfolio/wp-content/uploads/2023/11/author2.png" alt="Client Image">
                                 </div>
                                 <p class="feedback content">Sajeeb has been exceptional, delivering the first stage of our project with limited information and direction. We're confident he'll be a valuable member of our web dev team. Highly recommend.</p>
                                 <h4 class="client-name">Rohit</h4>
@@ -27,7 +27,7 @@
                             <div class="swiper-slide testimonials-card">
                                 <div class="client-image">
                                     <div class="quote-icon"><i class="fa-solid fa-quote-left"></i></div>
-                                    <img src="http://localhost/developersajeeb/src/wp-content/uploads/2025/03/rohit-scaled-1.jpg" alt="Client Image">
+                                    <img src="https://wp.webtend.net/noxfolio/wp-content/uploads/2023/11/author2.png" alt="Client Image">
                                 </div>
                                 <p class="feedback content">Sajeeb has been exceptional, delivering the first stage of our project with limited information and direction. We're confident he'll be a valuable member of our web dev team. Highly recommend.</p>
                                 <h4 class="client-name">Rohit</h4>
@@ -36,7 +36,7 @@
                             <div class="swiper-slide testimonials-card">
                                 <div class="client-image">
                                     <div class="quote-icon"><i class="fa-solid fa-quote-left"></i></div>
-                                    <img src="http://localhost/developersajeeb/src/wp-content/uploads/2025/03/rohit-scaled-1.jpg" alt="Client Image">
+                                    <img src="https://wp.webtend.net/noxfolio/wp-content/uploads/2023/11/author2.png" alt="Client Image">
                                 </div>
                                 <p class="feedback content">Sajeeb has been exceptional, delivering the first stage of our project with limited information and direction. We're confident he'll be a valuable member of our web dev team. Highly recommend.</p>
                                 <h4 class="client-name">Rohit</h4>

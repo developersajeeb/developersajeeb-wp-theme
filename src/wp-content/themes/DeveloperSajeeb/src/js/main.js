@@ -77,3 +77,41 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     });
 });
+
+// Client logo Swiper Slider
+document.addEventListener("DOMContentLoaded", () => {
+    new Swiper(".ClintLogoSwiper", {
+        slidesPerView: 1,
+        spaceBetween: 20,
+        loop: true,
+        autoplay: {
+            delay: 3200,
+            disableOnInteraction: true,
+        },
+        pagination: {
+            el: ".swiper-pagination",
+            dynamicBullets: true,
+        },
+        breakpoints: {
+            360: {
+                slidesPerView: 2,
+                spaceBetween: 20,
+            },
+
+            640: {
+                slidesPerView: 3,
+                spaceBetween: 20,
+            },
+
+            768: {
+                slidesPerView: 4,
+                spaceBetween: 30,
+            },
+
+            1024: {
+                slidesPerView: 5,
+                spaceBetween: 30,
+            },
+        }
+    });
+});

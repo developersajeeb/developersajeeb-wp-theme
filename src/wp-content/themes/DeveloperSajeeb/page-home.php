@@ -47,26 +47,27 @@ $frontpage_id = get_option('page_on_front');
     <!-- Hero Banner section end -->
     
     <!-- About Us section end -->
-    <section class="secondary-bg-color">
-        <div class="container about-us-container">
-
-            <div class="about-us-content">
-                <h4 class="subtitle heading-font">About Me</h4>
-                <h2 class="title">Professional Solutions for <span class="text-primary-color">Complex Digital</span> Product Challenges</h2>
-                <p class="content about-us-description">As an experienced web developer, I specialize in frontend technologies like HTML, CSS, SCSS, Tailwind, Bootstrap, and Material UI, and I am skilled in React.js, TypeScropt, Next.js, Node.js, Express, MongoDB, and also WordPress. I also have a solid understanding of SEO and expertise in UI design, where I combine aesthetic precision with functionality to craft engaging user experiences.</p>
-
-                <ul class="skills-category">
-                    <li><span class="list-icon"><i class="fa-solid fa-check"></i></span> <span class="list-text heading-font">Web Design</span></li>
-                    <li><span class="list-icon"><i class="fa-solid fa-check"></i></span> <span class="list-text heading-font">Web Development</span></li>
-                    <li><span class="list-icon"><i class="fa-solid fa-check"></i></span> <span class="list-text heading-font">Ui/UX Design</span></li>
-                    <li><span class="list-icon"><i class="fa-solid fa-check"></i></span> <span class="list-text heading-font">SEO</span></li>
-                </ul>
-
-            </div>
-            <img class="glob-img-for-bg" src="<?php echo get_template_directory_uri(); ?>/img/global-shape.svg" alt="Global Image">
+    <section class="about-us-container">
+        <div class="secondary-bg-color has-border-rounded">
+            <div class="container about-us-wrap">
+                <div class="about-us-content">
+                    <h4 class="subtitle heading-font">About Me</h4>
+                    <h2 class="title">Professional Solutions for <span class="text-primary-color">Complex Digital</span> Product Challenges</h2>
+                    <p class="content about-us-description">As an experienced web developer, I specialize in frontend technologies like HTML, CSS, SCSS, Tailwind, Bootstrap, and Material UI, and I am skilled in React.js, TypeScropt, Next.js, Node.js, Express, MongoDB, and also WordPress. I also have a solid understanding of SEO and expertise in UI design, where I combine aesthetic precision with functionality to craft engaging user experiences.</p>
     
-            <div class="about-us-images">
-                <img class="glob-img" src="<?php echo get_template_directory_uri(); ?>/img/global-shape.svg" alt="Global Image">
+                    <ul class="skills-category">
+                        <li><span class="list-icon"><i class="fa-solid fa-check"></i></span> <span class="list-text heading-font">Web Design</span></li>
+                        <li><span class="list-icon"><i class="fa-solid fa-check"></i></span> <span class="list-text heading-font">Web Development</span></li>
+                        <li><span class="list-icon"><i class="fa-solid fa-check"></i></span> <span class="list-text heading-font">Ui/UX Design</span></li>
+                        <li><span class="list-icon"><i class="fa-solid fa-check"></i></span> <span class="list-text heading-font">SEO</span></li>
+                    </ul>
+    
+                </div>
+                <img class="glob-img-for-bg" src="<?php echo get_template_directory_uri(); ?>/img/global-shape.svg" alt="Global Image">
+        
+                <div class="about-us-images">
+                    <img class="glob-img" src="<?php echo get_template_directory_uri(); ?>/img/global-shape.svg" alt="Global Image">
+                </div>
             </div>
         </div>
     </section>
@@ -213,6 +214,144 @@ $frontpage_id = get_option('page_on_front');
      <!-- Clients Testimonials section Start -->
      <?php get_template_part('template-part/clients-testimonials'); ?>
     <!-- Clients Testimonials section End -->
+
+    <!-- CTA Section Start -->
+     <section class="container cta-section-wrap">
+        <div class="side-content">
+            <h4 class="subtitle heading-font">Get In Touch</h4>
+            <h2 class="title">Got a <span class="text-primary-color">Project</span> in Mind? Let’s Make It Happen!</h2>
+            <p class="content side-sections-description">Ready to elevate your projects? Let’s discuss your ideas and collaborate to bring your vision to life!</p>
+
+            <ul class="service-features-list">
+                <li class="heading-font"><span><i class="fa-solid fa-check"></i></span>24/7 Super Support</li>
+                <li class="heading-font"><span><i class="fa-solid fa-check"></i></span>Unlimited Revisions</li>
+                <li class="heading-font"><span><i class="fa-solid fa-check"></i></span>High-Quality Work</li>
+                <li class="heading-font"><span><i class="fa-solid fa-check"></i></span>Client-Centric Approach</li>
+                <li class="heading-font"><span><i class="fa-solid fa-check"></i></span>Fast & Reliable Communication</li>
+            </ul>
+        </div>
+
+        <div class="contact-form-wrap">
+            <!-- Contact Form -->
+        </div>
+     </section>
+    <!-- CTA Section End -->
+
+    <!-- Blog Section Start -->
+     <section class="blog-section-container">
+        <div class="secondary-bg-color has-border-rounded">
+            <div class="container blog-section-wrap">
+                <div class="blog-heading">
+                    <h4 class="subtitle heading-font">New & Blog</h4>
+                    <h2 class="title">Latest News & <span class="text-primary-color">Blog</span></h2>
+                </div>
+
+                <div class="blog-items-wrap">
+                    <div class="blog-item">
+                        <div class="blog-thumb">
+                            <img src="https://wp.webtend.net/noxfolio/wp-content/uploads/2023/04/blog-09-min-768x417.jpg" alt="Blog Image">
+                        </div>
+
+                        <div class="blog-item-content">
+                            <p class="category">Divi, WooCommerce, WordPress, Yoast</p>
+                            <p class="blog-item-date heading-font"><span><i class="fa-regular fa-calendar-days"></i></span> 17th May 2025</p>
+                            <h5>A Beginner’s Guide to Running Adventures</h5>
+
+                            <a href="<?php echo home_url(); ?>/blog" class="read-more-btn">Read More <span><i class="fa-solid fa-link"></i></span></a>
+                        </div>
+                    </div>
+                    <div class="blog-item">
+                        <div class="blog-thumb">
+                            <img src="https://wp.webtend.net/noxfolio/wp-content/uploads/2023/04/blog-09-min-768x417.jpg" alt="Blog Image">
+                        </div>
+
+                        <div class="blog-item-content">
+                            <p class="category">Divi, WooCommerce, WordPress, Yoast</p>
+                            <p class="blog-item-date heading-font"><span><i class="fa-regular fa-calendar-days"></i></span> 17th May 2025</p>
+                            <h5>A Beginner’s Guide to Running Adventures</h5>
+
+                            <a href="<?php echo home_url(); ?>/blog" class="read-more-btn">Read More <span><i class="fa-solid fa-link"></i></span></a>
+                        </div>
+                    </div>
+                    <div class="blog-item">
+                        <div class="blog-thumb">
+                            <img src="https://wp.webtend.net/noxfolio/wp-content/uploads/2023/04/blog-09-min-768x417.jpg" alt="Blog Image">
+                        </div>
+
+                        <div class="blog-item-content">
+                            <p class="category">Divi, WooCommerce, WordPress, Yoast</p>
+                            <p class="blog-item-date heading-font"><span><i class="fa-regular fa-calendar-days"></i></span> 17th May 2025</p>
+                            <h5>A Beginner’s Guide to Running Adventures</h5>
+
+                            <a href="<?php echo home_url(); ?>/blog" class="read-more-btn">Read More <span><i class="fa-solid fa-link"></i></span></a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="blogs-more-btn-wrap">
+                    <a href="<?php echo home_url(); ?>/blog" class="primary-color-btn more-blogs-btn">More Blogs <span><i class="fa-solid fa-chevron-right"></i></span></a>
+                </div>
+            </div>
+        </div>
+     </section>
+    <!-- Blog Section End -->
+
+    <!-- Client Logo Slider Section Start -->
+     <section class="container client-logo-section-wrap">
+        <h5 class="logo-section-title">I’ve collaborated with <span class="text-primary-color">global clients</span>, delivering projects with excellence.</h5>
+
+        <div class="client-logo-wrap">
+            <div class="swiper ClintLogoSwiper">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <div class="single-logo">
+                            <a href="#">
+                                <img src="https://wp.webtend.net/noxfolio/wp-content/uploads/2023/11/client-logo8.png" alt="Logo">
+                            </a>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="single-logo">
+                            <a href="#">
+                                <img src="https://wp.webtend.net/noxfolio/wp-content/uploads/2023/11/client-logo8.png" alt="Logo">
+                            </a>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="single-logo">
+                            <a href="#">
+                                <img src="https://wp.webtend.net/noxfolio/wp-content/uploads/2023/11/client-logo8.png" alt="Logo">
+                            </a>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="single-logo">
+                            <a href="#">
+                                <img src="https://wp.webtend.net/noxfolio/wp-content/uploads/2023/11/client-logo8.png" alt="Logo">
+                            </a>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="single-logo">
+                            <a href="#">
+                                <img src="https://wp.webtend.net/noxfolio/wp-content/uploads/2023/11/client-logo8.png" alt="Logo">
+                            </a>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="single-logo">
+                            <a href="#">
+                                <img src="https://wp.webtend.net/noxfolio/wp-content/uploads/2023/11/client-logo8.png" alt="Logo">
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="swiper-pagination"></div>
+            </div>
+        </div>
+     </section>
+    <!-- Client Logo Slider Section End -->
 </main>
 
 <?php
