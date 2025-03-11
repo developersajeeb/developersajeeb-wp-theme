@@ -115,3 +115,25 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     });
 });
+
+// Page bottom to top button with animation
+document.addEventListener("DOMContentLoaded", function () {
+    const backToTopBtn = document.querySelector(".back-to-top");
+
+    window.addEventListener("scroll", function () {
+        if (window.scrollY > 200) {
+            backToTopBtn.classList.add("show");
+            backToTopBtn.classList.remove("hide");
+        } else {
+            backToTopBtn.classList.add("hide");
+            backToTopBtn.classList.remove("show");
+        }
+    });
+
+    backToTopBtn.addEventListener("click", function () {
+        window.scrollTo({
+            top: 0,
+            behavior: "smooth"
+        });
+    });
+});

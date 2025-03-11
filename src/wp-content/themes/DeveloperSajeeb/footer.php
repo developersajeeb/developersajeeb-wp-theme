@@ -59,6 +59,8 @@
             <li><a target="_blank" href="#">X</a></li>
             <li><a target="_blank" href="#">Instagram</a></li>
         </ul>
+
+        <button class="back-to-top"><i class="fa-solid fa-arrows-up-to-line"></i></button>
     </section>
 </footer>
 <?php wp_footer(); ?>

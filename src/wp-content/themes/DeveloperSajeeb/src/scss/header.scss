@@ -114,6 +114,14 @@
                     }
                 }
 
+                @media screen and (max-width: 640px) {
+                    gap: 15px;
+                    
+                    .lets-talk-btn {
+                        font-size: 14px;
+                    }
+                }
+
                 .lets-talk-hamburger {
                     max-width: 50px;
                     width: 100%;
