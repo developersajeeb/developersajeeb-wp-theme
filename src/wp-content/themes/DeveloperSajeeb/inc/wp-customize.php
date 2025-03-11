@@ -20,6 +20,12 @@ function wp_customize_register( $wp_customize ) {
         'section' => 'devsajeeb_header_area',
     )));
 
+    // Footer Area Section
+    $wp_customize->add_section("devsajeeb_footer_area", array(
+        "title" => __("Footer Area", "developersajeeb"),
+        "description" => __("Customize your footer area.", "developersajeeb"),
+    ));
+
     // Footer Menu
     $wp_customize->add_setting('footer_menu', array(
         'default' => '',
@@ -27,11 +33,46 @@ function wp_customize_register( $wp_customize ) {
 
     $wp_customize->add_control('footer_menu', array(
         'label' => __('Footer Menu', 'developersajeeb'),
-        'section' => 'devsajeeb_footer_option',
+        'section' => 'devsajeeb_footer_area',
         'type' => 'select',
         'choices' => wp_get_nav_menus_as_options(),
     ));
 
+    // Footer Short Description
+    $wp_customize->add_setting('footer_short_description', array(
+        'default' => '',
+        'sanitize_callback' => 'sanitize_text_field',
+    ));
+
+    $wp_customize->add_control('footer_short_description', array(
+        'label' => __('Footer Short Description', 'developersajeeb'),
+        'section' => 'devsajeeb_footer_area',
+        'type' => 'textarea',
+    ));
+
+    // Footer Contact Info - Emails
+    $wp_customize->add_setting('footer_email', array(
+        'default' => '',
+        'sanitize_callback' => 'sanitize_text_field',
+    ));
+
+    $wp_customize->add_control('footer_email', array(
+        'label' => __('Footer Email', 'developersajeeb'),
+        'section' => 'devsajeeb_footer_area',
+        'type' => 'email',
+    ));
+
+    // Footer Contact Info - Phone Numbers
+    $wp_customize->add_setting('footer_phone', array(
+        'default' => '',
+        'sanitize_callback' => 'sanitize_text_field',
+    ));
+
+    $wp_customize->add_control('footer_phone', array(
+        'label' => __('Footer Phone Number', 'developersajeeb'),
+        'section' => 'devsajeeb_footer_area',
+        'type' => 'text',
+    ));
 }
 
 function wp_get_nav_menus_as_options() {
