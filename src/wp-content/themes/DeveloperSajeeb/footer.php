@@ -8,7 +8,10 @@
                 <a href="<?php echo home_url(); ?>"><img class="top-bar-logo" src="<?php echo get_theme_mod('devsajeeb_logo'); ?>" alt="developer sajeeb"></a>
                 <?php if (!empty(get_theme_mod('footer_short_description', ''))) { ?>
                     <p class="content"><?php echo esc_attr(get_theme_mod('footer_short_description', '')); ?></p>
-                <?php } ?>
+                <?php } else {
+                        echo '<p class="no-content-massage">Please add short description in Customize.</p>';
+                    } 
+                ?>
             </div>
 
             <div class="middle-content">
@@ -23,7 +26,7 @@
                             'menu_id' => 'footer-nav',
                         ));
                     } else {
-                        echo '<p>Please select a footer menu in the Customize.</p>';
+                        echo '<p class="no-content-massage">Please select a footer menu in the Customize.</p>';
                     }
                 ?>
             </div>
