@@ -29,33 +29,44 @@
                     <div class="lets-talk-aside-wrap">
                         <span class="sidebar-menu-close"><i class="fa-solid fa-xmark"></i></span>
                         <img class="top-bar-logo" src="<?php echo get_theme_mod('devsajeeb_logo'); ?>" alt="developer sajeeb">
-                        <h2 class="heading-font tag-line">Unique Digital Ideas or Solutions for Successful Business</h2>
+                        <h2 class="heading-font tag-line"><?php echo esc_html(get_option('sidebar_description')); ?></h2>
                         <h4 class="sidebar-contact-heading">Location & Contact Info</h4>
 
                         <ul class="sidebar-contact-list">
                            <li class="sidebar-contact-item">
                                <span class="contact-item-icon"><i class="fa-regular fa-envelope"></i></span>
-                               <a href="mailto:info@developersajeeb.com" class="contact-text" target="_blank">info@developersajeeb.com</a>
+                               <a href="mailto:<?php echo esc_html(get_option('contact_email')) ?: '#'; ?>" class="contact-text" target="_blank"><?php echo esc_html(get_option('contact_email')) ?: 'N/A'; ?></a>
                            </li> 
                            <li class="sidebar-contact-item">
                                <span class="contact-item-icon"><i class="fa-solid fa-headset"></i></span>
-                               <a href="tel:+8801743370840" class="contact-text" target="_blank">+8801743370840</a>
+                               <a href="tel:<?php echo esc_html(get_option('contact_number')) ?: '#'; ?>" class="contact-text" target="_blank"><?php echo esc_html(get_option('contact_number')) ?: 'N/A'; ?></a>
                            </li> 
                            <li class="sidebar-contact-item">
                                <span class="contact-item-icon"><i class="fa-solid fa-map-pin"></i></span>
-                               <a href="https://maps.app.goo.gl/hGfuDqyv3L2qwU457" class="contact-text" target="_blank">Dhaka, Bangladesh</a>
+                               <p class="contact-text"><?php echo esc_html(get_option('contact_location')) ?: 'N/A'; ?></p>
                            </li> 
                         </ul>
 
                         <h4 class="sidebar-follow-heading">Follow Me</h4>
                         <ul class="social-follow-list">
-                            <li><a class="social-icon" href="#" target="_blank"><i class="fa-brands fa-facebook-f"></i></a></li>
-                            <li><a class="social-icon" href="#" target="_blank"><i class="fa-brands fa-youtube"></i></a></li>
-                            <li><a class="social-icon" href="#" target="_blank"><i class="fa-brands fa-linkedin-in"></i></a></li>
-                            <li><a class="social-icon" href="#" target="_blank"><i class="fa-brands fa-github"></i></a></li>
-                            <li><a class="social-icon" href="#" target="_blank"><i class="fa-brands fa-dribbble"></i></a></li>
-                            <li><a class="social-icon" href="#" target="_blank"><i class="fa-brands fa-x-twitter"></i></a></li>
-                            <li><a class="social-icon" href="#" target="_blank"><i class="fa-brands fa-instagram"></i></a></li>
+                            <?php 
+                            $social_platforms = [
+                                'facebook' => 'fa-facebook-f',
+                                'youtube' => 'fa-youtube',
+                                'linkedin' => 'fa-linkedin-in',
+                                'github' => 'fa-github',
+                                'dribbble' => 'fa-dribbble',
+                                'x' => 'fa-x-twitter',
+                                'instagram' => 'fa-instagram'
+                            ];
+
+                            foreach ($social_platforms as $platform => $icon_class) {
+                                $link = get_option("social_{$platform}");
+                                if (!empty($link)) {
+                                    echo '<li><a class="social-icon" href="' . esc_url($link) . '" target="_blank"><i class="fa-brands ' . esc_attr($icon_class) . '"></i></a></li>';
+                                }
+                            }
+                            ?>
                         </ul>
                     </div>
                     <div class="mobile-sidebar-menu">

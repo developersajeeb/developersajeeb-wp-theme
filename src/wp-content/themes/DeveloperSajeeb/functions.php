@@ -21,4 +21,7 @@ include_once('inc/wp-customize.php');
 // Mime Types file
 include_once('inc/mime-types.php');
 
+// Theme Option Page
+include_once('inc/theme-options.php');
+
 ?>

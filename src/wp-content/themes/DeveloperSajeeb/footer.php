@@ -37,14 +37,14 @@
                 <?php if (!empty(get_theme_mod('footer_email', ''))) { ?>
                     <p class="contact-item">
                         <span><i class="fa-regular fa-envelope"></i></span>
-                        <a href="mailto:<?php echo esc_attr(get_theme_mod('footer_email', '')); ?>"><?php echo esc_html(get_theme_mod('footer_email', '')); ?></a>
+                        <a href="mailto:<?php echo esc_html(get_option('contact_email')) ?: '#'; ?>"><?php echo esc_html(get_option('contact_email')) ?: 'N/A'; ?></a>
                     </p>
                 <?php } ?>
                 
                 <?php if (!empty(get_theme_mod('footer_phone', ''))) { ?>
                     <p class="contact-item">
                         <span><i class="fa-solid fa-headset"></i></span>
-                        <a href="tel:<?php echo esc_attr(get_theme_mod('footer_phone', '')); ?>"><?php echo esc_html(get_theme_mod('footer_phone', '')); ?></a>
+                        <a href="tel:<?php echo esc_html(get_option('contact_number')) ?: '#'; ?>"><?php echo esc_html(get_option('contact_number')) ?: 'N/A'; ?></a>
                     </p>
                 <?php } ?>
             </div>
@@ -54,13 +54,16 @@
     <section class="footer-copyright-container container">
         <p>Copyright &copy;<?php echo date('Y'); ?>, All Rights Reserved</p>
         <ul class="footer-social-media">
-            <li><a target="_blank" href="#">Facebook</a></li>
-            <li><a target="_blank" href="#">YouTube</a></li>
-            <li><a target="_blank" href="#">LinkedIn</a></li>
-            <li><a target="_blank" href="#">Github</a></li>
-            <li><a target="_blank" href="#">Dribbble</a></li>
-            <li><a target="_blank" href="#">X</a></li>
-            <li><a target="_blank" href="#">Instagram</a></li>
+            <?php 
+            $social_platforms = ['facebook', 'youtube', 'linkedin', 'github', 'dribbble', 'x', 'instagram'];
+
+            foreach ($social_platforms as $platform) {
+                $link = get_option("social_{$platform}");
+                if (!empty($link)) {
+                    echo '<li><a target="_blank" href="' . esc_url($link) . '">' . ucfirst($platform) . '</a></li>';
+                }
+            }
+            ?>
         </ul>
 
         <button class="back-to-top"><i class="fa-solid fa-arrows-up-to-line"></i></button>

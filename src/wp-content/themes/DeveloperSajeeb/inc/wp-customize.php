@@ -49,30 +49,6 @@ function wp_customize_register( $wp_customize ) {
         'section' => 'devsajeeb_footer_area',
         'type' => 'textarea',
     ));
-
-    // Footer Contact Info - Emails
-    $wp_customize->add_setting('footer_email', array(
-        'default' => '',
-        'sanitize_callback' => 'sanitize_text_field',
-    ));
-
-    $wp_customize->add_control('footer_email', array(
-        'label' => __('Footer Email', 'developersajeeb'),
-        'section' => 'devsajeeb_footer_area',
-        'type' => 'email',
-    ));
-
-    // Footer Contact Info - Phone Numbers
-    $wp_customize->add_setting('footer_phone', array(
-        'default' => '',
-        'sanitize_callback' => 'sanitize_text_field',
-    ));
-
-    $wp_customize->add_control('footer_phone', array(
-        'label' => __('Footer Phone Number', 'developersajeeb'),
-        'section' => 'devsajeeb_footer_area',
-        'type' => 'text',
-    ));
 }
 
 function wp_get_nav_menus_as_options() {
