@@ -3,38 +3,64 @@
  * Template Name: Front Page
  */
 get_header();
-
 $frontpage_id = get_option('page_on_front');
 
-// echo "<pre>";
-// print_r($works_query->posts);
-// echo "</pre>";
+echo "<pre>";
+// print_r($home_hero);
+echo "</pre>";
 ?>
 
 <main>
     <!-- Hero Banner section start -->
     <section class="hero-bg">
         <div class="hero-section-container">
+            <?php 
+                $home_hero = get_field('home_hero'); 
+
+                $call_text = $home_hero['hero_intro']['call_text'];
+                $name = $home_hero['hero_intro']['my_name'];
+                $title = $home_hero['hero_intro']['title'];
+                $short_desc = $home_hero['hero_intro']['short_description'];
+                $hero_btn = $home_hero['hero_intro']['hero_button'];
+
+                $hero_image = $home_hero['home_hero_image'];
+
+                $stats_numbers = $home_hero['stats_section'];
+            ?>
             <div class="intro-text">
-                <h3 class="heading-font">Hello, i’m</h2>
-                <h2>Sajeeb Debnath</h1>
-                <h1>Web Developer</h3>
-                <p class="content">Designing and Developing Interactive Web Platforms That Reflect Your Brand’s Identity and Achieve Your Goals!</p>
-                <a href="<?php echo home_url(); ?>/contact" class="primary-color-btn">Hire Me <span><i class="fa-solid fa-chevron-right"></i></span></a>
+                <?php if (!empty($call_text)) : ?><h3 class="heading-font"><?php echo esc_attr($call_text) ?></h2><?php endif; ?>
+                <?php if (!empty($name)) : ?><h2><?php echo esc_attr($name) ?></h2><?php endif; ?>
+                <?php if (!empty($title)) : ?><h1><?php echo esc_attr($title) ?></h1><?php endif; ?>
+                <?php if (!empty($title)) : ?><p class="content"><?php echo esc_attr($short_desc) ?></p><?php endif; ?>
+                <?php if ($hero_btn) : ?>
+                <a class="primary-color-btn" href="<?php echo !empty($hero_btn['url']) ? esc_url(home_url($hero_btn['url'])) : '#'; ?>" 
+                    target="<?php echo !empty($hero_btn['target']) ? esc_attr($hero_btn['target']) : '_self'; ?>">
+                    <?php echo esc_attr($hero_btn['title']); ?>
+                    <span><i class="fa-solid fa-chevron-right"></i></span>
+                </a>
+                <?php endif; ?>
             </div>
 
             <div class="middle-image">
-                <img src="http://localhost/developersajeeb/src/wp-content/uploads/2025/03/Sajeeb-Debnath-home.png" alt="Developer Sajeeb">
+                <?php if (!empty($hero_image)) : ?><img src="<?php echo esc_url($hero_image['url']); ?>" alt="<?php echo esc_attr($hero_image['alt']); ?>"><?php endif; ?>
             </div>
 
             <div class="hero-right-content">
                 <div class="right-content-wrap">
-                    <h3>4+</h3>
-                    <p class="heading-font">Years Of Experience</p>
-                    <h3>110+</h3>
-                    <p class="heading-font">Project Complete</p>
-                    <h3>99%</h3>
-                    <p class="heading-font">Client Satisfactions</p>
+                    <?php if (!empty($stats_numbers['years_of_experience'])) : ?>
+                        <h3><?php echo esc_attr($stats_numbers['years_of_experience']) ?>+</h3>
+                        <p class="heading-font">Years Of Experience</p>
+                    <?php endif; ?>
+                    
+                    <?php if (!empty($stats_numbers['project_complete'])) : ?>
+                        <h3><?php echo esc_attr($stats_numbers['project_complete']) ?>+</h3>
+                        <p class="heading-font">Project Complete</p>
+                    <?php endif; ?>
+                    
+                    <?php if (!empty($stats_numbers['client_satisfactions'])) : ?>
+                        <h3><?php echo esc_attr($stats_numbers['client_satisfactions']) ?>%</h3>
+                        <p class="heading-font">Client Satisfactions</p>
+                    <?php endif; ?>
                 </div>
             </div>
         </div>
