@@ -35,7 +35,7 @@
                 <?php foreach ($section['technologies'] as $technology) : ?>
                 <div class="item">
                     <img src="<?php echo esc_url($technology['technology_logo']['url']); ?>" alt="<?php echo esc_url($technology['technology_logo']['alt']); ?>">
-                    <p><?php echo esc_attr($technology['technology_name']); ?></p>
+                    <p class="heading-font"><?php echo esc_attr($technology['technology_name']); ?></p>
                 </div>
                 <?php endforeach; ?>
             </div>
