@@ -5,9 +5,9 @@
 get_header();
 $frontpage_id = get_option('page_on_front');
 
-echo "<pre>";
+// echo "<pre style='color: #fff;'>";
 // print_r($home_hero);
-echo "</pre>";
+// echo "</pre>";
 ?>
 
 <main>
@@ -42,7 +42,11 @@ echo "</pre>";
             </div>
 
             <div class="middle-image">
-                <?php if (!empty($hero_image)) : ?><img src="<?php echo esc_url($hero_image['url']); ?>" alt="<?php echo esc_attr($hero_image['alt']); ?>"><?php endif; ?>
+                <?php if (!empty($hero_image)) : ?>
+                    <img src="<?php echo esc_url($hero_image['url']); ?>" alt="<?php echo esc_attr($hero_image['alt']); ?>">
+                <?php else : ?>
+                    <img src="<?php echo esc_url(get_template_directory_uri() . '/img/no-image-placeholder.webp'); ?>" alt="Default Image">
+                <?php endif; ?>
             </div>
 
             <div class="hero-right-content">
@@ -78,15 +82,25 @@ echo "</pre>";
             <div class="container about-us-wrap">
                 <div class="about-us-content">
                     <h4 class="subtitle heading-font">About Me</h4>
-                    <h2 class="title">Professional Solutions for <span class="text-primary-color">Complex Digital</span> Product Challenges</h2>
-                    <p class="content about-us-description">As an experienced web developer, I specialize in frontend technologies like HTML, CSS, SCSS, Tailwind, Bootstrap, and Material UI, and I am skilled in React.js, TypeScropt, Next.js, Node.js, Express, MongoDB, and also WordPress. I also have a solid understanding of SEO and expertise in UI design, where I combine aesthetic precision with functionality to craft engaging user experiences.</p>
+                    <?php
+                        $about_content = get_field('about_section');
+                        $about_title = $about_content['about_heading'];
+                        $about_description = $about_content['about_description'];
+                        $about_service_name = $about_content['service_name'];
+                    ?>
+                    <?php if (!empty($about_title)) : ?><h2 class="title"><?php echo wp_kses_post($about_title); ?></h2><?php endif; ?>
+                    <?php if (!empty($about_description)) : ?><p class="content about-us-description"><?php echo esc_attr($about_description); ?></p><?php endif; ?>
     
-                    <ul class="skills-category">
-                        <li><span class="list-icon"><i class="fa-solid fa-check"></i></span> <span class="list-text heading-font">Web Design</span></li>
-                        <li><span class="list-icon"><i class="fa-solid fa-check"></i></span> <span class="list-text heading-font">Web Development</span></li>
-                        <li><span class="list-icon"><i class="fa-solid fa-check"></i></span> <span class="list-text heading-font">Ui/UX Design</span></li>
-                        <li><span class="list-icon"><i class="fa-solid fa-check"></i></span> <span class="list-text heading-font">SEO</span></li>
-                    </ul>
+                    <?php if (!empty($about_service_name) && is_array($about_service_name)) : ?>
+                        <ul class="skills-category">
+                            <?php foreach ($about_service_name as $service) : ?>
+                                <li>
+                                    <span class="list-icon"><i class="fa-solid fa-check"></i></span> 
+                                    <span class="list-text heading-font"><?php echo esc_html($service); ?></span>
+                                </li>
+                            <?php endforeach; ?>
+                        </ul>
+                    <?php endif; ?>
     
                 </div>
                 <img class="glob-img-for-bg" src="<?php echo get_template_directory_uri(); ?>/img/global-shape.svg" alt="Global Image">
@@ -98,9 +112,12 @@ echo "</pre>";
         </div>
     </section>
     <!-- About Us section end -->
-
+    
     <section>
         <!-- Work Experience section start -->
+        <?php
+        $working_experience = get_field('working_experience');
+        if ($working_experience) : ?>
         <div class="container experience-section-wrap">
             <div class="icon-wrap">
                 <div class="icon">
@@ -109,128 +126,59 @@ echo "</pre>";
             </div>
 
             <div class="experience-content">
-                <h4 class="subtitle heading-font">My Resume</h4>
-                <h2 class="title">Real <span class="text-primary-color">Solutions</span> for Web Challenges</h2>
+                <h4 class="subtitle heading-font">Work Experience</h4>
+                <h2 class="title">My <span>Professional</span> Journey & Experience</h2>
 
                 <div class="experience-wrap">
+                <?php foreach ($working_experience as $experience) : ?>
                     <div class="experience-card">
                         <span class="icon"><i class="fa-solid fa-arrow-up-right-dots"></i></span>
                         <div class="details">
-                            <p>2023 - Present</p>
-                            <h6>Jr. Web Developer</h6>
-                            <span class="heading-font">CodersBucket</span>
+                            <p>
+                                <?php 
+                                // Convert Start Date (MM/YYYY) to "Mon YYYY"
+                                if (!empty($experience['start_date'])) {
+                                    $start_date_parts = explode('/', $experience['start_date']);
+                                    $start_month = DateTime::createFromFormat('!m', $start_date_parts[0])->format('M');
+                                    $start_year = $start_date_parts[1];
+                                    $start_date = $start_month . '. ' . $start_year;
+                                } else {
+                                    $start_date = 'N/A';
+                                }
+
+                                // Convert End Date or Show "Present"
+                                if (!empty($experience['present'])) {
+                                    $end_date = 'Present';
+                                } elseif (!empty($experience['end_date'])) {
+                                    $end_date_parts = explode('/', $experience['end_date']);
+                                    $end_month = DateTime::createFromFormat('!m', $end_date_parts[0])->format('M');
+                                    $end_year = $end_date_parts[1];
+                                    $end_date = $end_month . '. ' . $end_year;
+                                } else {
+                                    $end_date = 'Present';
+                                }
+
+                                echo esc_html($start_date) . ' - ' . esc_html($end_date);
+                                ?>
+                            </p>
+                            <h6><?php echo esc_html($experience['job_title']); ?></h6>
+                            <span class="heading-font"><?php echo esc_html($experience['company_name']); ?></span>
                         </div>
                     </div>
-                    <div class="experience-card">
-                        <span class="icon"><i class="fa-solid fa-arrow-up-right-dots"></i></span>
-                        <div class="details">
-                            <p>2023 - Present</p>
-                            <h6>Jr. Web Developer</h6>
-                            <span class="heading-font">CodersBucket</span>
-                        </div>
-                    </div>
-                    <div class="experience-card">
-                        <span class="icon"><i class="fa-solid fa-arrow-up-right-dots"></i></span>
-                        <div class="details">
-                            <p>2023 - Present</p>
-                            <h6>Jr. Web Developer</h6>
-                            <span class="heading-font">CodersBucket</span>
-                        </div>
-                    </div>
+                <?php endforeach; ?>
                 </div>
             </div>
         </div>
+        <?php endif; ?>
         <!-- Work Experience section end -->
         
         <!-- Services section start -->
-        <div class="container services-section-wrap">
-            <div class="services-heading">
-                <h4 class="subtitle heading-font">Popular Services</h4>
-                <h2 class="title">My <span class="text-primary-color">Special Service</span> For your Business Development</h2>
-            </div>
-            
-            <ul class="services-items-wrap">
-                <li class="services-item">
-                    <span class="services-item-number">01</span>
-                    <div>
-                        <p class="service-name heading-font">Web Application Development</p>
-                        <p class="service-description">Building Scalable Web Applications</p>
-                    </div>
-                </li>
-                <li class="services-item">
-                    <span class="services-item-number">01</span>
-                    <div>
-                        <p class="service-name heading-font">Web Application Development</p>
-                        <p class="service-description">Building Scalable Web Applications</p>
-                    </div>
-                </li>
-                <li class="services-item">
-                    <span class="services-item-number">01</span>
-                    <div>
-                        <p class="service-name heading-font">Web Application Development</p>
-                        <p class="service-description">Building Scalable Web Applications</p>
-                    </div>
-                </li>
-                <li class="services-item">
-                    <span class="services-item-number">01</span>
-                    <div>
-                        <p class="service-name heading-font">Web Application Development</p>
-                        <p class="service-description">Building Scalable Web Applications</p>
-                    </div>
-                </li>
-            </ul>
-        </div>
+        <?php get_template_part('template-part/service-list'); ?>
         <!-- Services section end -->
     </section>
     
     <!-- Skills section start -->
-    <section class="skills-section-container">
-        <div class="secondary-bg-color has-border-rounded">
-            <div class="container skills-section-wrap">
-                <div class="skills-section-content">
-                    <div class="skills-content-wrap">
-                        <h4 class="subtitle heading-font">My Skills</h4>
-                        <h2 class="title">Let’s Explore <span class="text-primary-color">Skills & Experience</span></h2>
-                        <p class="content skills-sections-description">My main focus is web development, combining frontend expertise, UI/UX design, and SEO to craft dynamic and engaging web applications. I ensure each project is both visually appealing and optimized for performance and growth.</p>
-                        <a href="<?php echo home_url(); ?>/about-us" class="primary-color-btn more-details-btn">More Details <span><i class="fa-solid fa-chevron-right"></i></span></a>
-                    </div>
-                    
-                    <div class="right-image">
-                        <img src="<?php echo get_template_directory_uri(); ?>/img/skills-section-image.png" alt="Skills And Idea Image">
-                    </div>
-                </div>
-                
-                <div class="skills-items-wrap">
-                    <div class="item">
-                        <img src="http://localhost/developersajeeb/src/wp-content/uploads/2025/03/html-5.png" alt="Html">
-                        <p>HTML5</p>
-                    </div>
-                    <div class="item">
-                        <img src="http://localhost/developersajeeb/src/wp-content/uploads/2025/03/html-5.png" alt="Html">
-                        <p>HTML5</p>
-                    </div>
-                    <div class="item">
-                        <img src="http://localhost/developersajeeb/src/wp-content/uploads/2025/03/html-5.png" alt="Html">
-                        <p>HTML5</p>
-                    </div>
-                    <div class="item">
-                        <img src="http://localhost/developersajeeb/src/wp-content/uploads/2025/03/html-5.png" alt="Html">
-                        <p>HTML5</p>
-                    </div>
-                    <div class="item">
-                        <img src="http://localhost/developersajeeb/src/wp-content/uploads/2025/03/html-5.png" alt="Html">
-                        <p>HTML5</p>
-                    </div>
-                    <div class="item">
-                        <img src="http://localhost/developersajeeb/src/wp-content/uploads/2025/03/html-5.png" alt="Html">
-                        <p>HTML5</p>
-                    </div>
-                </div>
-            </div>
-    
-            <div class="bg-color"></div>
-        </div>
-    </section>
+    <?php get_template_part('template-part/my-skills'); ?>
     <!-- Skills section end -->
 
     <!-- Portfolio section Start -->

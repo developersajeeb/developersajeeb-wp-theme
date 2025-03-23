@@ -81,6 +81,10 @@ body {
     line-height: 1.2;
     color: vars.$color-white;
 
+    span {
+        color: vars.$primary-color;
+    }
+
     @media screen and (max-width: 1024px) {
         font-size: 36px;
     }
