@@ -82,7 +82,7 @@ $frontpage_id = get_option('page_on_front');
     
     <section>
         <!-- Work Experience section start -->
-        <?php
+        <!-- <?php
         $working_experience = get_field('working_experience');
         if ($working_experience) : ?>
         <div class="container experience-section-wrap">
@@ -136,7 +136,7 @@ $frontpage_id = get_option('page_on_front');
                 </div>
             </div>
         </div>
-        <?php endif; ?>
+        <?php endif; ?> -->
         <!-- Work Experience section end -->
         
         <!-- Services section start -->

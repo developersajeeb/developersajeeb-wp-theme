@@ -10,7 +10,7 @@ add_theme_support('title-tag');
 register_nav_menu('main_menu', __('Main Menu', 'developersajeeb'));
 
 //Thumbnail Support
-add_theme_support('post-thumbnails', array('page', 'post'));
+add_theme_support('post-thumbnails', array('page', 'post', 'portfolio'));
 
 //Theme CSS and Js file calling
 include_once('inc/enqueue.php');
@@ -24,4 +24,6 @@ include_once('inc/mime-types.php');
 // Theme Option Page
 include_once('inc/theme-options.php');
 
+// Theme Option Page
+include_once('inc/post-type.php');
 ?>
