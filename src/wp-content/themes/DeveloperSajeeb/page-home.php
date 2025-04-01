@@ -238,67 +238,7 @@ $frontpage_id = get_option('page_on_front');
     <!-- Blog Section End -->
 
     <!-- Client Logo Slider Section Start -->
-    <section class="container client-logo-section-wrap">
-        <h5 class="logo-section-title">I’ve collaborated with <span class="text-primary-color">global clients</span>,
-            delivering projects with excellence.</h5>
-
-        <div class="client-logo-wrap">
-            <div class="swiper ClintLogoSwiper">
-                <div class="swiper-wrapper">
-                    <div class="swiper-slide">
-                        <div class="single-logo">
-                            <a href="#">
-                                <img src="https://wp.webtend.net/noxfolio/wp-content/uploads/2023/11/client-logo8.png"
-                                    alt="Logo">
-                            </a>
-                        </div>
-                    </div>
-                    <div class="swiper-slide">
-                        <div class="single-logo">
-                            <a href="#">
-                                <img src="https://wp.webtend.net/noxfolio/wp-content/uploads/2023/11/client-logo8.png"
-                                    alt="Logo">
-                            </a>
-                        </div>
-                    </div>
-                    <div class="swiper-slide">
-                        <div class="single-logo">
-                            <a href="#">
-                                <img src="https://wp.webtend.net/noxfolio/wp-content/uploads/2023/11/client-logo8.png"
-                                    alt="Logo">
-                            </a>
-                        </div>
-                    </div>
-                    <div class="swiper-slide">
-                        <div class="single-logo">
-                            <a href="#">
-                                <img src="https://wp.webtend.net/noxfolio/wp-content/uploads/2023/11/client-logo8.png"
-                                    alt="Logo">
-                            </a>
-                        </div>
-                    </div>
-                    <div class="swiper-slide">
-                        <div class="single-logo">
-                            <a href="#">
-                                <img src="https://wp.webtend.net/noxfolio/wp-content/uploads/2023/11/client-logo8.png"
-                                    alt="Logo">
-                            </a>
-                        </div>
-                    </div>
-                    <div class="swiper-slide">
-                        <div class="single-logo">
-                            <a href="#">
-                                <img src="https://wp.webtend.net/noxfolio/wp-content/uploads/2023/11/client-logo8.png"
-                                    alt="Logo">
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="swiper-pagination"></div>
-            </div>
-        </div>
-    </section>
+    <?php get_template_part('template-part/client-logo-slider'); ?>
     <!-- Client Logo Slider Section End -->
 </main>
 
