@@ -53,6 +53,9 @@ function developersajeeb_theme_create_page() {
 
                         <label><?php _e('Location', 'developersajeeb'); ?></label>
                         <input type="text" name="contact_location" value="<?php echo esc_attr(get_option('contact_location')); ?>">
+                        
+                        <label><?php _e('Contact Form Shortcode', 'developersajeeb'); ?></label>
+                        <input type="text" name="contact_form_shortcode" value="<?php echo esc_attr(get_option('contact_form_shortcode')); ?>">
                     </div>
 
                     <!-- Social Media Tab -->
@@ -172,6 +175,7 @@ function developersajeeb_custom_settings() {
     register_setting('developersajeeb_options_group', 'contact_email');
     register_setting('developersajeeb_options_group', 'contact_number');
     register_setting('developersajeeb_options_group', 'contact_location');
+    register_setting('developersajeeb_options_group', 'contact_form_shortcode');
 
     // Social Media
     $social_platforms = ['facebook', 'youtube', 'linkedin', 'github', 'dribbble', 'x', 'instagram'];

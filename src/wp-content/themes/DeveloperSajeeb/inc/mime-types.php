@@ -7,4 +7,3 @@ function enable_custom_mime_types($mimes) {
     return $mimes;
 }
 add_filter('upload_mimes', 'enable_custom_mime_types');
-

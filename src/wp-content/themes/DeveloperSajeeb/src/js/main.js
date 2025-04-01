@@ -137,3 +137,27 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     });
 });
+
+document.addEventListener("DOMContentLoaded", function () {
+    const filters = document.querySelectorAll(".filter");
+    const portfolioItems = document.querySelectorAll(".portfolio-item");
+
+    filters.forEach(filter => {
+        filter.addEventListener("click", function () {
+            let filterValue = this.getAttribute("data-filter");
+
+            filters.forEach(f => f.classList.remove("active"));
+            this.classList.add("active");
+
+            portfolioItems.forEach(item => {
+                if (filterValue === "all" || item.classList.contains(filterValue)) {
+                    item.classList.remove("hide");
+                    item.classList.add("show");
+                } else {
+                    item.classList.remove("show");
+                    item.classList.add("hide");
+                }
+            });
+        });
+    });
+});

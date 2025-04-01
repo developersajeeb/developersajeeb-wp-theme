@@ -10,7 +10,7 @@ add_theme_support('title-tag');
 register_nav_menu('main_menu', __('Main Menu', 'developersajeeb'));
 
 //Thumbnail Support
-add_theme_support('post-thumbnails', array('page', 'post', 'portfolio'));
+add_theme_support('post-thumbnails', array('page', 'post', 'portfolio', 'testimonial'));
 
 //Theme CSS and Js file calling
 include_once('inc/enqueue.php');
