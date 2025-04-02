@@ -1,0 +1,61 @@
+// Variables
+@use "variables" as vars;
+
+// Client logo slider section
+.client-logo-section-wrap {
+    padding-top: 130px;
+    padding-bottom: 130px;
+
+    @media screen and (max-width: 1024px) {
+        padding-top: 90px;
+        padding-bottom: 90px;
+    }
+
+    @media screen and (max-width: 767px) {
+        padding-top: 60px;
+        padding-bottom: 60px;
+    }
+
+    .logo-section-title {
+        text-align: center;
+        font-size: 18px;
+        line-height: 1.3;
+        color: vars.$color-white;
+        font-weight: 500;
+        margin-bottom: 60px;
+    }
+
+    .swiper-wrapper {
+        padding-bottom: 50px;
+
+    }
+    
+    .swiper-pagination {
+        .swiper-pagination-bullet {
+            background-color: vars.$color-gray;
+        }
+
+        .swiper-pagination-bullet-active-main {
+            background-color: vars.$primary-color;
+        }
+    }
+
+    .single-logo {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        &:hover {
+            img {
+                opacity: 1;
+            }
+        }
+
+        img {
+            opacity: .2;
+            transition: 0.3s all;
+            max-width: 180px;
+            width: 100%;
+        }
+    }
+}

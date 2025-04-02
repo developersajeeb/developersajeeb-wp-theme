@@ -1,0 +1,98 @@
+// Variables
+@use "variables" as vars;
+
+// Service section style
+.services-section-wrap {
+    padding-top: 110px;
+    padding-bottom: 130px;
+
+    @media screen and (max-width: 1024px) {
+        padding-top: 90px;
+        padding-bottom: 90px;
+    }
+
+    .services-heading {
+        text-align: center;
+        max-width: 696px;
+        margin: 0px auto;
+        margin-bottom: 60px;
+    }
+
+    @media screen and (max-width: 767px) {
+        padding-top: 60px;
+        padding-bottom: 60px;
+
+        .services-heading {
+            margin-bottom: 35px;
+        }
+    }
+
+    .services-items-wrap {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 30px;
+
+        @media screen and (max-width: 767px) {
+            grid-template-columns: repeat(1, minmax(0, 1fr));
+            gap: 20px;
+        }
+
+        .services-item {
+            background-color: vars.$secondary-light;
+            border: 1px solid vars.$gray-border-color;
+            border-radius: 16px;
+            padding: 35px 50px;
+            display: flex;
+            flex-direction: row;
+            gap: 45px;
+            transition: 0.3s all;
+
+            @media screen and (max-width: 1024px) {
+                gap: 25px;
+                padding: 25px 35px;
+            }
+
+            &:hover {
+                border-color: vars.$primary-color;
+
+                .services-item-number {
+                    color: vars.$color-white;
+                }
+            }
+
+            @media screen and (max-width: 767px) {
+                padding: 18px 25px;
+            }
+
+            .services-item-number {
+                font-size: 24px;
+                font-weight: 400;
+                color: vars.$color-gray;
+                transition: 0.3s all;
+            }
+
+            .service-name {
+                font-size: 28px;
+                font-weight: 700;
+                line-height: 1.2;
+                color: vars.$color-white;
+
+                @media screen and (max-width: 1024px) {
+                    font-size: 22px;
+                }
+            }
+
+            .service-description {
+                font-size: 16px;
+                font-weight: 400;
+                line-height: 1.8;
+                margin-top: 10px;
+                color: vars.$color-gray;
+
+                @media screen and (max-width: 1024px) {
+                    font-size: 14px;
+                }
+            }
+        }
+    }
+}

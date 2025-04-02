@@ -18,5 +18,14 @@ Back End Developer:  Sajeeb Debnath
 // Pages CSS
 @use "pages/home.scss";
 
+// Template Parts CSS
+@use "template-part/_about_me.scss";
+@use "template-part/_client_logo_slider.scss";
+@use "template-part/_clients_testimonials.scss";
+@use "template-part/_my_skills.scss";
+@use "template-part/_need_service_form.scss";
+@use "template-part/_portfolio_section.scss";
+@use "template-part/_service_list.scss";
+
 // Utils CSS
 @use "utils.scss";

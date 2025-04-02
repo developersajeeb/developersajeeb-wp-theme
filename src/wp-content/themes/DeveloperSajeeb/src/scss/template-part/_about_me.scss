@@ -1,0 +1,117 @@
+// Variables
+@use "variables" as vars;
+
+// About us section
+.about-us-container {
+    max-width: 1670px;
+    margin-right: auto;
+    margin-left: auto;
+    padding: 0px 15px;
+
+    .about-us-wrap {
+        display: grid;
+        grid-template-columns: repeat(11, minmax(0, 1fr));
+        gap: 30px;
+        align-items: center;
+        padding-top: 130px;
+        padding-bottom: 130px;
+        position: relative;
+        overflow: hidden;
+
+        @media screen and (max-width: 1024px) {
+            align-items: start;
+            grid-template-columns: repeat(1, minmax(0, 1fr));
+            padding-top: 90px;
+            padding-bottom: 90px;
+        }
+
+        @media screen and (max-width: 767px) {
+            padding-top: 60px;
+            padding-bottom: 60px;
+        }
+
+        .about-us-content {
+            grid-column: span 6 / span 6;
+            z-index: 1;
+
+            .about-us-description {
+                margin: 30px 0px 40px 0px;
+            }
+
+            .skills-category {
+                display: grid;
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+                gap: 16px;
+
+                @media screen and (max-width: 640px) {
+                    grid-template-columns: repeat(1, minmax(0, 1fr));
+                }
+
+                li {
+                    display: flex;
+                    align-items: center;
+
+                    .list-icon {
+                        color: vars.$primary-color;
+                        font-size: 28px;
+                        margin-right: 20px;
+                    }
+
+                    .list-text {
+                        color: vars.$color-white;
+                        font-size: 22px;
+                        line-height: 1.4;
+                        font-weight: 500;
+                    }
+                }
+            }
+
+            .my-story-btn {
+                margin-top: 50px;
+
+                &:hover {
+                    background-color: vars.$secondary-light;
+                }
+            }
+
+        }
+
+        .glob-img-for-bg {
+            display: none;
+            position: absolute;
+            z-index: 0;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            margin: auto;
+            opacity: 0.4;
+
+            @media screen and (max-width: 1024px) {
+                display: block;
+                width: 100%;
+            }
+        }
+
+        .about-us-images {
+            grid-column: span 5 / span 5;
+
+            @media screen and (max-width: 1024px) {
+                display: none;
+            }
+
+            .glob-img {
+                width: 100%;
+                max-width: 100%;
+            }
+        }
+
+        @media screen and (max-width: 1024px) {
+            .about-us-content {
+                .about-us-description {
+                    margin: 30px 0px 35px 0px;
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,197 @@
+// Variables
+@use "variables" as vars;
+
+// Client Testimonials Slider Section
+.testimonials-section-container {
+    max-width: 1670px;
+    margin-right: auto;
+    margin-left: auto;
+    padding: 0px 15px;
+
+    .testimonials-section-wrap {
+        padding-top: 130px;
+        padding-bottom: 130px;
+        display: grid;
+        grid-template-columns: repeat(12, minmax(0, 1fr));
+        gap: 70px;
+
+        @media screen and (max-width: 1200px) {
+            gap: 40px;
+        }
+
+        @media screen and (max-width: 1024px) {
+            padding-top: 90px;
+            padding-bottom: 90px;
+            gap: 30px;
+            grid-template-columns: repeat(1, minmax(0, 1fr));
+            gap: 50px;
+        }
+
+        @media screen and (max-width: 767px) {
+            padding-top: 60px;
+            padding-bottom: 60px;
+        }
+
+        .side-content {
+            grid-column: span 4 / span 4;
+
+            @media screen and (max-width: 1024px) {
+                grid-column: span 1 / span 1;
+            }
+
+            .side-sections-description {
+                padding: 30px 0px 50px 0px;
+            }
+
+            .swiper-button-wrap {
+                display: flex;
+                gap: 20px;
+
+                .swiper-button-next {
+                    position: unset;
+                    background-color: transparent;
+                    border: 1px solid vars.$color-white;
+                    color: vars.$color-white;
+                    width: 50px;
+                    height: 50px;
+                    padding: 14px;
+                    border-radius: 50px;
+                    transition: 0.3s all;
+
+                    &::after {
+                        display: none;
+                    }
+
+                    &:hover {
+                        background-color: vars.$color-white;
+                        color: vars.$secondary-light;
+                    }
+                }
+
+                .swiper-button-prev {
+                    position: unset;
+                    background-color: transparent;
+                    border: 1px solid vars.$color-white;
+                    color: vars.$color-white;
+                    width: 50px;
+                    height: 50px;
+                    padding: 14px;
+                    border-radius: 50px;
+                    transition: 0.3s all;
+
+                    &::after {
+                        display: none;
+                    }
+
+                    &:hover {
+                        background-color: vars.$color-white;
+                        color: vars.$secondary-light;
+                    }
+                }
+            }
+        }
+
+        .testimonials-slider {
+            grid-column: span 8 / span 8;
+
+            @media screen and (max-width: 1024px) {
+                grid-column: span 1 / span 1;
+            }
+
+            .testimonials-card {
+                background-color: vars.$secondary-medium;
+                border: 1px solid vars.$gray-border-color;
+                padding: 50px;
+                border-radius: 20px;
+                transition: 0.3s all;
+
+                @media screen and (max-width: 1200px) {
+                    padding: 40px 30px;
+                }
+
+                @media screen and (max-width: 1200px) {
+                    padding: 30px 20px;
+                }
+
+                .client-image {
+                    position: relative;
+                    max-width: 85px;
+                    width: 85px;
+                    height: 85px;
+                    margin: 0 auto;
+
+                    .quote-icon {
+                        max-width: 60px;
+                        width: 60px;
+                        height: 60px;
+                        border-radius: 60px;
+                        background-color: vars.$secondary-light;
+                        color: vars.$primary-color;
+                        font-size: 24px;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        position: absolute;
+                        top: 12px;
+                        left: -50px;
+                        transition: 0.3s all;
+
+                        @media screen and (max-width: 640px) {
+                            max-width: 50px;
+                            width: 50px;
+                            height: 50px;
+                            top: 22px;
+                            left: -38px;
+                        }
+                    }
+
+                    img {
+                        max-width: 85px;
+                        width: 85px;
+                        height: 85px;
+                        object-fit: cover;
+                        border-radius: 85px;
+                    }
+                }
+
+                &:hover {
+                    background-color: vars.$secondary-light;
+
+                    .quote-icon {
+                        background-color: vars.$primary-color;
+                        color: vars.$secondary-light;
+                    }
+                }
+
+                p {
+                    font-size: 16px;
+                    font-weight: 400;
+                    line-height: 1.85;
+                    color: vars.$color-gray;
+                    margin: 40px 0px 30px 0px;
+                    text-align: center;
+
+                    @media screen and (max-width: 640px) {
+                        margin: 30px 0px 20px 0px;
+                    }
+                }
+
+                .client-name {
+                    font-size: 22px;
+                    font-weight: 500;
+                    line-height: 1.2;
+                    text-align: center;
+                    color: vars.$color-white;
+                }
+
+                .client-title {
+                    font-size: 18px;
+                    color: vars.$primary-color;
+                    margin-top: 10px;
+                    text-align: center;
+                    display: block;
+                }
+            }
+        }
+    }
+}

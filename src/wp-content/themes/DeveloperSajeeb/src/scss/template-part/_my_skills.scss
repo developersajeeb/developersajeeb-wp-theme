@@ -1,0 +1,137 @@
+// Variables
+@use "variables" as vars;
+
+// Skills Section
+.skills-section-container {
+    max-width: 1670px;
+    margin-right: auto;
+    margin-left: auto;
+    padding: 0px 15px;
+    position: relative;
+
+    .skills-section-wrap {
+        padding-top: 100px;
+        padding-bottom: 130px;
+        z-index: 1;
+        position: relative;
+
+        @media screen and (max-width: 1024px) {
+            padding-top: 70px;
+            padding-bottom: 90px;
+        }
+
+        @media screen and (max-width: 767px) {
+            padding-top: 60px;
+            padding-bottom: 60px;
+        }
+
+        .skills-section-content {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 60px;
+            align-items: center;
+
+            @media screen and (max-width: 767px) {
+                grid-template-columns: repeat(1, minmax(0, 1fr));
+                gap: 0px;
+            }
+
+            .skills-content-wrap {
+                .skills-sections-description {
+                    margin: 40px 0px 45px 0px;
+                }
+
+                @media screen and (max-width: 1024px) {
+                    .skills-sections-description {
+                        margin: 30px 0px 35px 0px;
+                    }
+                }
+
+                .more-details-btn {
+                    &:hover {
+                        background-color: vars.$secondary-light;
+                    }
+                }
+            }
+
+            .right-image {
+                display: flex;
+                justify-content: end;
+
+                img {
+                    max-width: 480px;
+                }
+
+                @media screen and (max-width: 1024px) {
+                    img {
+                        max-width: 380px;
+                    }
+                }
+
+                @media screen and (max-width: 767px) {
+                    display: none;
+                }
+            }
+        }
+
+        .skills-items-wrap {
+            display: grid;
+            grid-template-columns: repeat(6, minmax(0, 1fr));
+            gap: 30px;
+            margin-top: 60px;
+
+            @media screen and (max-width: 1024px) {
+                grid-template-columns: repeat(4, minmax(0, 1fr));
+            }
+
+            @media screen and (max-width: 767px) {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+
+            @media screen and (max-width: 640px) {
+                gap: 20px;
+            }
+
+            .item {
+                background-color: vars.$secondary-light;
+                padding: 25px 15px;
+                border: 1px solid vars.$gray-border-color;
+                border-radius: 14px;
+                transition: 0.3s all;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+
+                &:hover {
+                    border-color: vars.$primary-color;
+                }
+
+                img {
+                    max-width: 55px;
+                    width: 100%;
+                }
+
+                p {
+                    font-size: 22px;
+                    font-weight: 500;
+                    line-height: 1.2;
+                    margin-top: 20px;
+                    color: vars.$color-white;
+                }
+            }
+        }
+    }
+
+    .bg-color {
+        background-color: vars.$primary-color;
+        width: 100%;
+        height: 220px;
+        opacity: 0.1;
+        filter: blur(150px);
+        position: absolute;
+        bottom: 70px;
+        right: 0px;
+        left: 0px;
+        z-index: 0;
+    }
+}
