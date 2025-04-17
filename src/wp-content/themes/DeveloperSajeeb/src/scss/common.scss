@@ -3,7 +3,7 @@
 body {
     background-color: vars.$primary-dark;
     position: relative;
-    
+
     &:before {
         content: "";
         display: block;
@@ -63,7 +63,7 @@ body {
     }
 
     svg {
-      font-size: 12px;  
+        font-size: 12px;
     }
 }
 
@@ -107,4 +107,27 @@ body {
 
 .has-border-rounded {
     border-radius: 20px;
+}
+
+.common-page-hero {
+    h1 {
+        color: vars.$color-white;
+        font-size: 65px;
+        font-weight: 600;
+        line-height: 1.1em;
+        letter-spacing: -0.03em;
+    }
+    
+    h2 {
+        color: vars.$color-white;
+        font-size: 24px;
+        font-weight: 500; 
+    }
+
+    @media screen and (max-width: 1200px) {
+        h1 {
+            font-size: 46px;
+        }
+
+    }
 }

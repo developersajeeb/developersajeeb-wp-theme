@@ -4,10 +4,6 @@
  */
 get_header();
 $frontpage_id = get_option('page_on_front');
-
-// echo "<pre style='color: #fff;'>";
-// print_r($home_hero);
-// echo "</pre>";
 ?>
 
 <main>

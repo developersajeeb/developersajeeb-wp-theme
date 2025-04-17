@@ -1,0 +1,15 @@
+// Variables
+@use "variables" as vars;
+
+.portfolio-page-container {
+    padding: 180px 15px 80px 15px;
+
+    @media screen and (max-width: 1024px) {
+        padding-top: 140px;
+    }
+
+    @media screen and (max-width: 767px) {
+        padding: 120px 15px 56px 15px;
+    }
+
+}

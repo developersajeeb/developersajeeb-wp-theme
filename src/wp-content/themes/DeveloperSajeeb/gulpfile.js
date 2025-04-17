@@ -7,7 +7,7 @@ const babel = require('gulp-babel');
 const uglify = require('gulp-uglify');
 
 // Compile SCSS
-gulp.task('sass', function() {
+gulp.task('sass', function () {
   return gulp.src('./src/scss/style.scss')
     .pipe(sourcemaps.init())
     .pipe(sass().on('error', sass.logError))
@@ -18,7 +18,7 @@ gulp.task('sass', function() {
 });
 
 // Compile and Minify JavaScript
-gulp.task('js', function() {
+gulp.task('js', function () {
   return gulp.src('./src/js/main.js')
     .pipe(sourcemaps.init())
     .pipe(babel({ presets: ['@babel/preset-env'] }))
@@ -29,11 +29,10 @@ gulp.task('js', function() {
 });
 
 // Serve with BrowserSync and watch for changes
-gulp.task('serve', function() {
+gulp.task('serve', function () {
   browserSync.init({
-    server: {
-      baseDir: "./"
-    }
+    proxy: "http://localhost/developersajeeb/src",
+    notify: false
   });
   gulp.watch('./src/scss/**/*.scss', gulp.series('sass'));
   gulp.watch('./src/js/**/*.js', gulp.series('js'));
