@@ -152,14 +152,26 @@ $frontpage_id = get_option('page_on_front');
     <!-- Skills section end -->
 
     <!-- Portfolio section Start -->
-    <?php set_query_var('portfolio_posts_count', 4);
-    get_template_part('template-part/portfolio-section'); ?>
+    <section class="container portfolio-section-wrap">
+        <div class="services-heading">
+            <h4 class="subtitle heading-font">Latest Works</h4>
+            <h2 class="title">Explore My Popular <span class="text-primary-color">Projects</span></h2>
+        </div>
+        
+        <?php set_query_var('portfolio_posts_count', 4);
+        get_template_part('template-part/portfolio-cards'); ?>
+
+        <div class="portfolio-vew-btn">
+            <a href="<?php echo home_url(); ?>/portfolio" class="primary-color-btn more-details-btn">View More Projects
+                <span><i class="fa-solid fa-chevron-right"></i></span></a>
+        </div>
+    </section>
     <!-- Portfolio section End -->
 
     <!-- Clients Testimonials section Start -->
     <?php get_template_part('template-part/clients-testimonials'); ?>
     <!-- Clients Testimonials section End -->
-    
+
     <!-- Contact Form Section Start -->
     <?php get_template_part('template-part/need-service-form'); ?>
     <!-- Contact Form Section End -->

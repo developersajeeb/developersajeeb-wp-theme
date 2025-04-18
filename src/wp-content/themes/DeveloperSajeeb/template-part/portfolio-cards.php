@@ -2,13 +2,7 @@
 $portfolio_posts_count = get_query_var('portfolio_posts_count', -1);
 ?>
 
-<!-- Portfolio section Start -->
-<section class="container portfolio-section-wrap">
-    <div class="services-heading">
-        <h4 class="subtitle heading-font">Latest Works</h4>
-        <h2 class="title">Explore My Popular <span class="text-primary-color">Projects</span></h2>
-    </div>
-
+<div class="container">
     <ul class="portfolios-category">
         <li class="filter active" data-filter="all">All</li>
         <?php
@@ -70,10 +64,4 @@ $portfolio_posts_count = get_query_var('portfolio_posts_count', -1);
         wp_reset_postdata();
         ?>
     </div>
-
-    <div class="portfolio-vew-btn">
-        <a href="<?php echo home_url(); ?>/portfolio" class="primary-color-btn more-details-btn">View More Projects
-            <span><i class="fa-solid fa-chevron-right"></i></span></a>
-    </div>
-</section>
-<!-- Portfolio section End -->
+</div>

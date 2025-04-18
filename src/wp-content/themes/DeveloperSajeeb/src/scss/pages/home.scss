@@ -198,6 +198,34 @@
     }
 }
 
+.portfolio-section-wrap {
+    padding-top: 130px;
+    padding-bottom: 130px;
+
+    @media screen and (max-width: 1024px) {
+        padding-top: 90px;
+        padding-bottom: 90px;
+    }
+
+    @media screen and (max-width: 767px) {
+        padding-top: 60px;
+        padding-bottom: 60px;
+    }
+
+    .services-heading {
+        text-align: center;
+    }
+
+    .portfolio-vew-btn {
+        text-align: center;
+
+        a {
+            display: inline-block;
+        }
+    }
+
+}
+
 // Work Experience section
 .experience-section-wrap {
     display: grid;

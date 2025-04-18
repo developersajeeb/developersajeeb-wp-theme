@@ -89,7 +89,7 @@ body {
         font-size: 36px;
     }
 
-    @media screen and (max-width: 1024px) {
+    @media screen and (max-width: 767px) {
         font-size: 28px;
     }
 }
@@ -110,23 +110,59 @@ body {
 }
 
 .common-page-hero {
-    h1 {
-        color: vars.$color-white;
-        font-size: 65px;
-        font-weight: 600;
-        line-height: 1.1em;
-        letter-spacing: -0.03em;
+    text-align: center;
+
+    .common-page-hero-title {
+        position: relative;
+
+        h1 {
+            color: vars.$color-white;
+            font-size: 48px;
+            font-weight: 500;
+            line-height: 1.1em;
+            letter-spacing: -0.03em;
+            margin-bottom: 20px;
+            display: inline;
+        }
+
+        img {
+            max-width: 60px;
+            display: inline;
+            position: absolute;
+            top: -46px;
+        }
     }
-    
+
+
     h2 {
         color: vars.$color-white;
         font-size: 24px;
-        font-weight: 500; 
+        font-weight: 500;
+        margin-top: 15px;
     }
 
-    @media screen and (max-width: 1200px) {
-        h1 {
-            font-size: 46px;
+    @media screen and (max-width: 1024px) {
+        .common-page-hero-title {
+            h1 {
+                font-size: 40px;
+            }
+        }
+    }
+
+    @media screen and (max-width: 767px) {
+        .common-page-hero-title {
+            h1 {
+                font-size: 32px;
+            }
+
+            img {
+                max-width: 40px;
+                top: -30px;
+            }
+        }
+
+        h2 {
+            font-size: 16px;
         }
 
     }
