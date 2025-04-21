@@ -164,51 +164,6 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 // FAQ Toggle
-// document.addEventListener('DOMContentLoaded', function() {
-//     const items = document.querySelectorAll('.faq button'); // Select all FAQ buttons
-
-//     function toggleAccordion() {
-//       const itemToggle = this.getAttribute('aria-expanded'); // Get the current aria-expanded state
-//       const faq = this.closest('.faq'); // Get the closest FAQ item
-//       const answer = faq.querySelector('.answer'); // Get the corresponding answer div
-//       const icon = this.querySelector('.toggle-icon i'); // Get the icon element
-
-//       // Collapse all accordion items first
-//       document.querySelectorAll('.faq').forEach(function(faq) {
-//         const currentAnswer = faq.querySelector('.answer');
-//         currentAnswer.style.maxHeight = null; // Close all answers
-//         currentAnswer.style.padding = "0px 30px"; // Reset padding to collapsed state
-//         currentAnswer.style.opacity = "0"; // Set opacity to 0 for fading out
-//         faq.querySelector('button').setAttribute('aria-expanded', 'false'); // Set aria-expanded to false
-
-//         // Only manipulate the icon if it exists
-//         const toggleIcon = faq.querySelector('.toggle-icon i');
-//         if (toggleIcon) {
-//           toggleIcon.classList.remove('fa-minus'); // Reset icon
-//           toggleIcon.classList.add('fa-plus'); // Reset icon
-//         }
-//       });
-
-//       // If the clicked item was collapsed, expand it
-//       if (itemToggle === 'false') {
-//         this.setAttribute('aria-expanded', 'true');
-//         answer.style.maxHeight = "1000px"; // Expand answer
-//         answer.style.padding = "8px 30px 30px 30px"; // Set padding for expanded state
-//         answer.style.opacity = "1"; // Set opacity to 1 for fade-in effect
-//         answer.style.transition = "max-height 0.5s ease, padding 0.5s ease, opacity 0.5s ease"; // Add transition for smooth animation
-
-//         // Only manipulate the icon if it exists
-//         if (icon) {
-//           icon.classList.remove('fa-plus');
-//           icon.classList.add('fa-minus');
-//         }
-//       }
-//     }
-
-//     // Add event listener for each FAQ button to toggle the accordion on click
-//     items.forEach((item) => item.addEventListener('click', toggleAccordion));
-// });
-
 document.addEventListener('DOMContentLoaded', function () {
     const items = document.querySelectorAll('.answer-button');
 
