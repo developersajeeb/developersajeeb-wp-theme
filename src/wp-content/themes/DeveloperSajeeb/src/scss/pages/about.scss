@@ -2,10 +2,11 @@
 @use "variables" as vars;
 
 .about-page-container {
-    padding: 180px 0px 80px 0px;
+    padding: 180px 0px 120px 0px;
 
     @media screen and (max-width: 1024px) {
         padding-top: 140px;
+        padding-bottom: 90px;
     }
 
     @media screen and (max-width: 767px) {
@@ -222,11 +223,11 @@
                     text-align: start;
                     border-radius: 10px;
                     transition: 0.3s all;
-                    
+
                     &:hover {
                         border-color: vars.$primary-color;
-    
-                        .question {
+
+                        .answer-button {
                             .toggle-icon {
                                 color: vars.$primary-color;
                             }
@@ -234,7 +235,17 @@
                     }
                 }
 
-                .question {
+                .faq[aria-expanded='true'] {
+                    border: 1px solid vars.$primary-color;
+
+                    .answer-button {
+                        .toggle-icon {
+                            color: vars.$primary-color;
+                        }
+                    }
+                }
+
+                .answer-button {
                     font-size: 18px;
                     font-weight: 500;
                     color: #fff;
@@ -245,6 +256,7 @@
                     width: 100%;
                     padding: 20px 30px;
                     cursor: pointer;
+                    border: none;
                 }
 
                 .answer {
@@ -253,7 +265,12 @@
                     border-bottom-left-radius: 10px;
                     font-size: 16px;
                     line-height: 26px;
-                    padding: 8px 30px 30px 30px;
+                    padding: 0px 30px;
+                    opacity: 0;
+                    max-height: 0;
+                    overflow: hidden;
+                    transition: opacity 0.4s ease-in-out, max-height 0.4s ease-in-out, padding 0.4s ease-in-out;
+                    will-change: opacity, max-height, padding;
 
                     ul {
                         padding-left: 16px;
@@ -262,6 +279,14 @@
                     a {
                         color: #B1B1B1;
                     }
+                }
+
+                .answer-button[aria-expanded='true']+.answer {
+                    opacity: 1;
+                    max-height: 1000px;
+                    transition: all 0.4s ease-in-out;
+                    will-change: opacity, max-height, padding;
+                    padding: 8px 30px 30px 30px;
                 }
             }
         }

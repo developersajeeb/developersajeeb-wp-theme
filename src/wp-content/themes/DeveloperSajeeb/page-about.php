@@ -107,13 +107,16 @@ get_header();
                     </div>
 
                     <div class="faq-items">
-                        <?php foreach ($section['faq_section'] as $item): ?>
-                            <details class="faq">
-                                <summary class="question"><span><?php echo esc_html($item['question']); ?></span> <span class="toggle-icon"><i class="fa-solid fa-plus"></i></span></summary>
+                        <?php foreach ($section['faq_section'] as $index => $item): ?>
+                            <div class="faq" aria-expanded="false">
+                                <button class="answer-button" id="accordion-button-<?php echo esc_attr($index); ?>">
+                                    <span><?php echo esc_html($item['question']); ?></span>
+                                    <span class="toggle-icon"><i class="fa-solid fa-plus"></i></span>
+                                </button>
                                 <div class="answer">
                                     <?php echo wp_kses_post($item['answer']); ?>
                                 </div>
-                            </details>
+                            </div>
                         <?php endforeach; ?>
                     </div>
                 </div>
