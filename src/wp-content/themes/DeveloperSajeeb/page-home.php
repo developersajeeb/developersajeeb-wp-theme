@@ -83,69 +83,9 @@ $frontpage_id = get_option('page_on_front');
     <?php get_template_part('template-part/about-me'); ?>
     <!-- About Us section end -->
 
-    <section>
-        <!-- Work Experience section start -->
-        <!-- <?php
-        $working_experience = get_field('working_experience');
-        if ($working_experience): ?>
-        <div class="container experience-section-wrap">
-            <div class="icon-wrap">
-                <div class="icon">
-                    <i class="fa-solid fa-code"></i>
-                </div>
-            </div>
-
-            <div class="experience-content">
-                <h4 class="subtitle heading-font">Work Experience</h4>
-                <h2 class="title">My <span>Professional</span> Journey & Experience</h2>
-
-                <div class="experience-wrap">
-                <?php foreach ($working_experience as $experience): ?>
-                    <div class="experience-card">
-                        <span class="icon"><i class="fa-solid fa-arrow-up-right-dots"></i></span>
-                        <div class="details">
-                            <p>
-                                <?php
-                                // Convert Start Date (MM/YYYY) to "Mon YYYY"
-                                if (!empty($experience['start_date'])) {
-                                    $start_date_parts = explode('/', $experience['start_date']);
-                                    $start_month = DateTime::createFromFormat('!m', $start_date_parts[0])->format('M');
-                                    $start_year = $start_date_parts[1];
-                                    $start_date = $start_month . '. ' . $start_year;
-                                } else {
-                                    $start_date = 'N/A';
-                                }
-
-                                // Convert End Date or Show "Present"
-                                if (!empty($experience['present'])) {
-                                    $end_date = 'Present';
-                                } elseif (!empty($experience['end_date'])) {
-                                    $end_date_parts = explode('/', $experience['end_date']);
-                                    $end_month = DateTime::createFromFormat('!m', $end_date_parts[0])->format('M');
-                                    $end_year = $end_date_parts[1];
-                                    $end_date = $end_month . '. ' . $end_year;
-                                } else {
-                                    $end_date = 'Present';
-                                }
-
-                                echo esc_html($start_date) . ' - ' . esc_html($end_date);
-                                ?>
-                            </p>
-                            <h6><?php echo esc_html($experience['job_title']); ?></h6>
-                            <span class="heading-font"><?php echo esc_html($experience['company_name']); ?></span>
-                        </div>
-                    </div>
-                <?php endforeach; ?>
-                </div>
-            </div>
-        </div>
-        <?php endif; ?> -->
-        <!-- Work Experience section end -->
-
-        <!-- Services section start -->
-        <?php get_template_part('template-part/service-list'); ?>
-        <!-- Services section end -->
-    </section>
+    <!-- Services section start -->
+    <?php get_template_part('template-part/service-list'); ?>
+    <!-- Services section end -->
 
     <!-- Skills section start -->
     <?php get_template_part('template-part/my-skills'); ?>
@@ -157,7 +97,7 @@ $frontpage_id = get_option('page_on_front');
             <h4 class="subtitle heading-font">Latest Works</h4>
             <h2 class="title">Explore My Popular <span class="text-primary-color">Projects</span></h2>
         </div>
-        
+
         <?php set_query_var('portfolio_posts_count', 4);
         get_template_part('template-part/portfolio-cards'); ?>
 

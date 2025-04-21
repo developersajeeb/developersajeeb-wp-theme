@@ -17,7 +17,8 @@ foreach ($flexible_content as $section):
                         <?php if (!empty($heading)): ?>
                             <h2 class="title"><?php echo wp_kses_post($heading); ?></h2><?php endif; ?>
                         <?php if (!empty($description)): ?>
-                            <p class="content about-us-description"><?php echo esc_attr($description); ?></p><?php endif; ?>
+                            <p class="content about-us-description"><?php echo wp_kses_post($description); ?></p>
+                        <?php endif; ?>
 
                         <?php if (!empty($service_name_list) && is_array($service_name_list)): ?>
                             <ul class="skills-category">

@@ -138,6 +138,7 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 });
 
+// Portfolio Filter
 document.addEventListener("DOMContentLoaded", function () {
     const filters = document.querySelectorAll(".filter");
     const portfolioItems = document.querySelectorAll(".portfolio-item");
@@ -158,6 +159,34 @@ document.addEventListener("DOMContentLoaded", function () {
                     item.classList.add("hide");
                 }
             });
+        });
+    });
+});
+
+// FAQ Toggle
+document.addEventListener("DOMContentLoaded", function() {
+    const faqs = document.querySelectorAll('.faq');
+
+    faqs.forEach(faq => {
+        const summary = faq.querySelector('summary');
+        const answer = faq.querySelector('.answer');
+        const toggleIcon = summary.querySelector('.toggle-icon');
+
+        // Initially hide answers with max-height set to 0
+        answer.style.maxHeight = '0';
+        answer.style.overflow = 'hidden';
+        answer.style.transition = 'max-height 0.3s ease-out';
+
+        summary.addEventListener('click', function() {
+            if (answer.style.maxHeight === '0px') {
+                // Slide down the answer
+                answer.style.maxHeight = answer.scrollHeight + 'px'; // Dynamically set to full content height
+                toggleIcon.innerHTML = '<i class="fa-solid fa-minus"></i>';
+            } else {
+                // Slide up the answer
+                answer.style.maxHeight = '0'; // Collapse the answer
+                toggleIcon.innerHTML = '<i class="fa-solid fa-plus"></i>';
+            }
         });
     });
 });

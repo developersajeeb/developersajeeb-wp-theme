@@ -1,5 +1,5 @@
 <section class="testimonials-section-container">
-    <div class="secondary-bg-color has-border-rounded">
+    <div class="secondary-bg-color has-border-rounded testimonials-bg-color">
         <div class="container testimonials-section-wrap">
             <div class="side-content">
                 <h4 class="subtitle heading-font">Clients Testimonials</h4>
