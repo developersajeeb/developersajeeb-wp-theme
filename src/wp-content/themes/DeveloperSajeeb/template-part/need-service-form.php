@@ -1,4 +1,4 @@
-<section class="container cta-section-wrap">
+<div class="container cta-section-wrap">
     <div class="side-content">
         <h4 class="subtitle heading-font">Get In Touch</h4>
         <h2 class="title">Got a <span class="text-primary-color">Project</span> in Mind? Let’s Make It Happen!</h2>
@@ -25,4 +25,4 @@
         }
         ?>
     </div>
-</section>
+</div>

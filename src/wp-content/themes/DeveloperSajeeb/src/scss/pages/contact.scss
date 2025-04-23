@@ -1,0 +1,30 @@
+// Variables
+@use "variables" as vars;
+
+.contact-page-container {
+    padding: 180px 0px 0px 0px;
+
+    @media screen and (max-width: 1024px) {
+        padding-top: 140px;
+    }
+
+    .contact-form-section {
+        
+        .contact-form-wrap {
+            padding: 50px;
+            border-radius: 22px;
+            background-color: #101010;
+        }
+        
+        @media screen and (max-width: 767px) {
+            margin-top: 20px;
+        }
+
+        @media screen and (max-width: 640px) {
+
+            .contact-form-wrap {
+                padding: 24px 20px;
+            } 
+        }
+    }
+}

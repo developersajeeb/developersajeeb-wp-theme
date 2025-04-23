@@ -32,6 +32,7 @@ gulp.task('js', function () {
 gulp.task('serve', function () {
   browserSync.init({
     proxy: "http://localhost/developersajeeb/src",
+    files: ["**/*.php"],
     notify: false
   });
   gulp.watch('./src/scss/**/*.scss', gulp.series('sass'));
