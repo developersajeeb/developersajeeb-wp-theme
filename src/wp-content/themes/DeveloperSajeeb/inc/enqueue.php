@@ -10,10 +10,16 @@ function css_js_files_calling() {
     
     // Enqueue the Font Awesome stylesheet
     wp_enqueue_style('devsajeeb-swiperjs-style', get_template_directory_uri() . '/src/plugins-styles/swiperjs/swiper-bundle.min.css', array(), '11.2.5');
+    
+    // Enqueue the FancyBox Stylesheet
+    wp_enqueue_style('devsajeeb-fancybox-style', get_template_directory_uri() . '/src/plugins-styles/fancybox/fancybox.css', array());
 
     // Enqueue the stylesheet (from Gulp compilation)
     wp_enqueue_style('devsajeeb-style', get_template_directory_uri() . '/assets/css/style.css', array(), '1.0.0');
 
+    // Enqueue the FancyBox Js files
+    wp_enqueue_script('devsajeeb-fancybox', get_template_directory_uri() . '/src/js/fancybox/fancybox.umd.js', array(), null, true);
+    
     // Enqueue the GSAP and other helper Js files
     wp_enqueue_script('devsajeeb-lenis', get_template_directory_uri() . '/src/js/gsap/lenis.min.js', array(), '1.1.19', true);
     wp_enqueue_script('devsajeeb-gsap', get_template_directory_uri() . '/src/js/gsap/gsap.min.js', array(), '3.12.7', true);

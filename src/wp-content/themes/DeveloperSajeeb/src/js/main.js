@@ -166,13 +166,14 @@ document.addEventListener("DOMContentLoaded", function () {
 // FAQ Toggle
 document.addEventListener('DOMContentLoaded', function () {
     const items = document.querySelectorAll('.answer-button');
+    if (items.length === 0) return;
 
     // Always open the first item by default
     const firstFaq = document.querySelector('.faq');
     firstFaq.setAttribute('aria-expanded', 'true');
     firstFaq.querySelector('.answer-button').setAttribute('aria-expanded', 'true');
     firstFaq.querySelector('.toggle-icon').innerHTML = '<i class="fa-solid fa-minus"></i>';
-    
+
     function toggleAccordion() {
         const faqContainer = this.closest('.faq');
         const itemToggle = this.getAttribute('aria-expanded');
@@ -196,3 +197,16 @@ document.addEventListener('DOMContentLoaded', function () {
     items.forEach((item) => item.addEventListener('click', toggleAccordion));
 });
 
+// Fancybox Config
+document.addEventListener("DOMContentLoaded", function () {
+    Fancybox.bind('[data-fancybox="portfolio-thumbnail"]', {
+        buttons: [
+            "zoom",
+            "fullScreen",,
+            "close"
+        ],
+        loop: false,
+        protect: true
+    });
+
+});
