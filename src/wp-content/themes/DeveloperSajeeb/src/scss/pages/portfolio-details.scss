@@ -19,7 +19,7 @@
         .expand-button {
             display: inline-block;
             position: absolute;
-            border: 3px solid vars.$gray-border-color;
+            border: 3px solid vars.$color-white;
             border-radius: 14px;
             width: 40px;
             height: 40px;
@@ -38,7 +38,7 @@
             svg {
                 path {
                     transition: 0.3s all;
-                    fill: vars.$gray-border-color;
+                    fill: vars.$color-white;
                 }
             }
 
@@ -53,7 +53,17 @@
             }
         }
 
-        img {
+        .project-logo {
+            max-width: 100px;
+            height: auto;
+            width: 100%;
+            position: absolute;
+            top: 15px;
+            left: 30px;
+            z-index: 1;
+        }
+
+        .wp-post-image {
             width: 100%;
             height: 600px;
             object-fit: cover;
@@ -118,7 +128,7 @@
 
 
         @media screen and (max-width: 1024px) {
-            img {
+            .wp-post-image {
                 height: 450px;
             }
 
@@ -130,7 +140,7 @@
         }
 
         @media screen and (max-width: 767px) {
-            img {
+            .wp-post-image {
                 height: 350px;
             }
 
@@ -148,31 +158,235 @@
         grid-template-columns: repeat(12, minmax(0, 1fr));
         gap: 30px;
 
-        .portfolio-description {
+        @media screen and (max-width: 1024px) {
+            grid-template-columns: repeat(1, minmax(0, 1fr));
+        }
+
+        @media screen and (max-width: 767px) {
+            margin-top: 30px;
+        }
+
+        .portfolio-content-wrap {
             grid-column: span 8 / span 8;
-            color: vars.$color-gray;
-            font-size: 16px;
-            line-height: 28px;
 
-            a {
-                color: vars.$primary-color;
-                text-decoration: underline;
+            @media screen and (max-width: 1024px) {
+                grid-column: span 1 / span 1;
             }
 
-            ul {
-                padding-left: 16px;
+            .portfolio-description {
+                color: vars.$color-gray;
+                font-size: 16px;
+                line-height: 28px;
+
+                a {
+                    color: vars.$primary-color;
+                    text-decoration: underline;
+                }
+
+                ul {
+                    padding-left: 16px;
+                }
+
+                blockquote {
+                    border-left: 4px solid;
+                    padding: 12px 12px 12px 18px;
+                    background-color: #1c1c1c;
+                    margin: 15px 0px;
+                }
             }
 
-            blockquote {
-                border-left: 4px solid;
-                padding: 12px 12px 12px 18px;
-                background-color: #1c1c1c;
-                margin: 15px 0px;
+            .live-link {
+                margin-top: 30px;
+
+                a {
+                    max-width: 200px;
+                    width: 100%;
+                    text-align: center;
+                }
+            }
+
+            .project-video {
+                
+                h2 {
+                    font-weight: 600;
+                    margin-top: 60px;
+                    margin-bottom: 20px;
+                }
+
+                .project-video-thumbnail {
+                    position: relative;
+
+                    img {
+                        width: 100%;
+                        height: 500px;
+                        object-fit: cover;
+                        border-radius: 15px;
+                        opacity: 0.4;
+                    }
+
+                    .video-play-button {
+                        position: absolute;
+                        z-index: 10;
+                        top: 50%;
+                        left: 50%;
+                        transform: translateX(-50%) translateY(-50%);
+                        box-sizing: content-box;
+                        display: block;
+                        width: 32px;
+                        height: 44px;
+                        border-radius: 50%;
+                        padding: 18px 20px 18px 28px;
+
+                        &:before {
+                            content: "";
+                            position: absolute;
+                            z-index: 0;
+                            left: 50%;
+                            top: 50%;
+                            transform: translateX(-50%) translateY(-50%);
+                            display: block;
+                            width: 80px;
+                            height: 80px;
+                            background: vars.$primary-color;
+                            border-radius: 50%;
+                            animation: pulse-border 1500ms ease-out infinite;
+                        }
+
+                        &::after {
+                            content: "";
+                            position: absolute;
+                            z-index: 1;
+                            left: 50%;
+                            top: 50%;
+                            transform: translateX(-50%) translateY(-50%);
+                            display: block;
+                            width: 80px;
+                            height: 80px;
+                            background: vars.$primary-color;
+                            border-radius: 50%;
+                            transition: all 200ms;
+                        }
+
+                        span {
+                            display: block;
+                            position: relative;
+                            z-index: 3;
+                            width: 0;
+                            height: 0;
+                            border-left: 28px solid vars.$secondary-light;
+                            border-top: 18px solid transparent;
+                            border-bottom: 18px solid transparent;
+                            margin-top: 4px;
+                            margin-left: 2px;
+                        }
+                    }
+                }
+
+                @media screen and (max-width: 1024px) {
+                    h2 {
+                        margin-top: 30px;
+                    }
+
+                    .project-video-thumbnail {
+                        img {
+                            height: 400px;
+                        }
+                    }
+                }
+
+                @media screen and (max-width: 767px) {
+                    .project-video-thumbnail {
+                        img {
+                            height: 280px;
+                        }
+                    }
+                }
+            }
+
+            .project-images {
+                margin-top: 20px;
+                display: grid;
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+                gap: 20px;
+
+                .inner-img {
+                    width: 100%;
+                    border-radius: 15px;
+                    height: 100%;
+                    object-fit: cover;
+                }
+
+                @media screen and (max-width: 640px) {
+                    grid-template-columns: repeat(1, minmax(0, 1fr));
+                }
             }
         }
+
 
         .project-info {
             grid-column: span 4 / span 4;
+
+            @media screen and (max-width: 1024px) {
+                grid-column: span 1 / span 1;
+            }
+
+            .project-info-items {
+                list-style: none;
+                padding: 30px;
+                border-radius: 15px;
+                background-color: vars.$secondary-light;
+                border: 1px solid vars.$gray-border-color;
+
+                @media screen and (max-width: 767px) {
+                    padding: 30px 20px;
+                }
+
+                .no-data-massage {
+                    text-align: center;
+                    color: vars.$color-gray;
+                }
+
+                li {
+                    padding: 20px 0px;
+                    border-bottom: 1px solid vars.$gray-border-color;
+                    text-align: center;
+
+                    &:last-child {
+                        border-bottom: none;
+                        padding-bottom: 0px;
+                    }
+
+                    &:first-child {
+                        padding-top: 0px;
+                    }
+
+                    .project-info-title {
+                        font-size: 18px;
+                        color: vars.$color-gray;
+                        font-weight: 700;
+                    }
+
+                    .project-info-value {
+                        font-size: 20px;
+                        line-height: 30px;
+                        color: vars.$color-white;
+                        font-weight: 500;
+                        margin-top: 8px;
+                    }
+                }
+            }
         }
+    }
+}
+
+@keyframes pulse-border {
+    0% {
+        transform: translateX(-50%) translateY(-50%) translateZ(0) scale(1);
+        opacity: 1;
+    }
+
+    100% {
+        transform: translateX(-50%) translateY(-50%) translateZ(0) scale(1.5);
+        opacity: 0;
     }
 }

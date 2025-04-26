@@ -11,6 +11,14 @@
                         <span><i class="fa-solid fa-expand"></i></span>
                     </a>
 
+                    <?php
+                    $portfolio_logo = get_field('project_logo');
+                    if (!empty($portfolio_logo)):
+                        ?>
+                        <img class="project-logo" src="<?php echo esc_attr($portfolio_logo['url']); ?>"
+                            alt="<?php echo esc_attr($portfolio_logo['alt']); ?>">
+                    <?php endif; ?>
+
                     <?php the_post_thumbnail('large'); ?>
 
                     <div class="portfolio-title-wrap">
@@ -31,11 +39,95 @@
             <?php endif; ?>
 
             <section class="container portfolio-content">
-                <div class="portfolio-description"><?php the_content(); ?></div>
+                <div class="portfolio-content-wrap">
+                    <div class="portfolio-description">
+                        <?php the_content(); ?>
+                    </div>
+                    
+                    <?php
+                    $project_video_thumbnail = get_field('live_link');
+                    if (!empty($project_video_thumbnail)):
+                        ?>
+                        <div class="live-link">
+                            <a class="primary-color-btn" href="<?php echo esc_url($project_video_thumbnail); ?>" target="_blank">Go Live</a>
+                        </div>
+                    <?php endif;
+                    ?>
 
-                <div class="project-info">
+                    <?php
+                    $project_video_thumbnail = get_field('project_video_thumbnail');
+                    $project_video_url = get_field('project_video');
+                    $project_images = get_field('project_screenshots');
 
+                    if (!empty($project_video_thumbnail) || !empty($project_images)):
+                        ?>
+                        <div class="project-video">
+                            <h2 class="title heading-font">Inside the Project</h2>
+
+                            <?php if (!empty($project_video_thumbnail)): ?>
+                                <div class="project-video-thumbnail">
+                                    <img src="<?php echo esc_url($project_video_thumbnail['url']); ?>"
+                                        alt="<?php echo esc_attr($project_video_thumbnail['alt']); ?>">
+                                    <a href="<?php echo esc_url($project_video_url); ?>" class="video-play-button"
+                                        data-fancybox="portfolio-thumbnail"><span></span></a>
+                                </div>
+                            <?php endif; ?>
+                        </div>
+
+                        <?php
+                        if ($project_images):
+                            ?>
+                            <div class="project-images">
+                                <?php foreach ($project_images as $image): ?>
+                                    <a href="<?php echo esc_url($image['url']); ?>" data-fancybox="portfolio-thumbnail">
+                                        <img class="inner-img" src="<?php echo esc_url($image['url']); ?>"
+                                            alt="<?php echo esc_attr($image['alt']); ?>">
+                                    </a>
+                                <?php endforeach; ?>
+                            </div>
+                        <?php endif; ?>
+
+                    <?php endif; ?>
                 </div>
+
+                <?php
+                $project_duration = get_field('project_duration');
+                $technology_or_tools = get_field('technology_or_tools');
+                $client = get_field('client');
+
+                if ($project_duration || $technology_or_tools || $client):
+                    ?>
+                    <div class="project-info">
+                        <ul class="project-info-items">
+                            <?php if ($project_duration): ?>
+                                <li>
+                                    <p class="project-info-title heading-font">Project Duration</p>
+                                    <p class="project-info-value"><?php echo esc_html($project_duration); ?></p>
+                                </li>
+                            <?php endif; ?>
+
+                            <?php if ($technology_or_tools): ?>
+                                <li>
+                                    <p class="project-info-title heading-font">Technology And Tools</p>
+                                    <p class="project-info-value"><?php echo esc_html($technology_or_tools); ?></p>
+                                </li>
+                            <?php endif; ?>
+
+                            <?php if ($client): ?>
+                                <li>
+                                    <p class="project-info-title heading-font">Client</p>
+                                    <p class="project-info-value"><?php echo esc_html($client); ?></p>
+                                </li>
+                            <?php endif; ?>
+                        </ul>
+                    </div>
+                <?php else: ?>
+                    <div class="project-info">
+                        <div class="project-info-items">
+                            <p class="no-data-massage">No info available</p>
+                        </div>
+                    </div>
+                <?php endif; ?>
             </section>
         </main>
     <?php endwhile; endif; ?>

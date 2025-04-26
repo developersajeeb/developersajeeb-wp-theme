@@ -53,7 +53,7 @@ body {
     background-color: vars.$primary-color;
     color: vars.$secondary-dark;
     transition: all 0.3s ease-in-out;
-    display: inline-flex;
+    display: inline-block;
     align-items: center;
     gap: 6px;
 
