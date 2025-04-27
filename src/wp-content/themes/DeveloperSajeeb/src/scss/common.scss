@@ -53,13 +53,40 @@ body {
     background-color: vars.$primary-color;
     color: vars.$secondary-dark;
     transition: all 0.3s ease-in-out;
-    display: inline-block;
+    display: inline-flex;
     align-items: center;
-    gap: 6px;
+    justify-content: center;
+    gap: 8px;
 
     &:hover {
         background-color: vars.$secondary-dark;
         color: vars.$color-white;
+    }
+
+    svg {
+        font-size: 12px;
+    }
+}
+
+.secondary-gray-btn {
+    font-size: 15px;
+    font-weight: 600;
+    line-height: 1.2;
+    text-transform: capitalize;
+    text-decoration: none;
+    border: 2px solid vars.$secondary-light;
+    border-radius: 15px;
+    padding: 16px 35px;
+    background-color: vars.$secondary-light;
+    color: vars.$color-white;
+    transition: all 0.3s ease-in-out;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+
+    &:hover {
+        border: 2px solid vars.$primary-color;
     }
 
     svg {

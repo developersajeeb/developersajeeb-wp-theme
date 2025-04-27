@@ -43,13 +43,14 @@
                     <div class="portfolio-description">
                         <?php the_content(); ?>
                     </div>
-                    
+
                     <?php
                     $project_video_thumbnail = get_field('live_link');
                     if (!empty($project_video_thumbnail)):
                         ?>
                         <div class="live-link">
-                            <a class="primary-color-btn" href="<?php echo esc_url($project_video_thumbnail); ?>" target="_blank">Go Live</a>
+                            <a class="primary-color-btn" href="<?php echo esc_url($project_video_thumbnail); ?>" target="_blank">Go
+                                Live <span><i class="fa-solid fa-arrow-up-right-from-square"></i></span></a>
                         </div>
                     <?php endif;
                     ?>
@@ -90,14 +91,14 @@
                     <?php endif; ?>
                 </div>
 
-                <?php
-                $project_duration = get_field('project_duration');
-                $technology_or_tools = get_field('technology_or_tools');
-                $client = get_field('client');
+                <div class="right-sidebar">
+                    <?php
+                    $project_duration = get_field('project_duration');
+                    $technology_or_tools = get_field('technology_or_tools');
+                    $client = get_field('client');
 
-                if ($project_duration || $technology_or_tools || $client):
-                    ?>
-                    <div class="project-info">
+                    if ($project_duration || $technology_or_tools || $client):
+                        ?>
                         <ul class="project-info-items">
                             <?php if ($project_duration): ?>
                                 <li>
@@ -120,14 +121,24 @@
                                 </li>
                             <?php endif; ?>
                         </ul>
-                    </div>
-                <?php else: ?>
-                    <div class="project-info">
-                        <div class="project-info-items">
-                            <p class="no-data-massage">No info available</p>
+                    <?php else: ?>
+                        <div class="project-info">
+                            <div class="project-info-items">
+                                <p class="no-data-massage">No info available</p>
+                            </div>
+                        </div>
+                    <?php endif; ?>
+
+                    <div class="sidebar-cta">
+                        <img class="sidebar-cta-bg" src="<?php echo get_template_directory_uri(); ?>/img/glop-black-bg.webp"
+                            alt="">
+                        <div class="cta-content">
+                            <h3>Bring Your Vision to Life – Expert <span class="heading-font">Web Development</span> Awaits!</h3>
+                            <a href="<?php echo esc_url(home_url('/contact')); ?>" class="secondary-gray-btn">Contact Now
+                                <span><i class="fa-solid fa-chevron-right"></i></span></a>
                         </div>
                     </div>
-                <?php endif; ?>
+                </div>
             </section>
         </main>
     <?php endwhile; endif; ?>
