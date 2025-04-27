@@ -63,7 +63,7 @@
                     if (!empty($project_video_thumbnail) || !empty($project_images)):
                         ?>
                         <div class="project-video">
-                            <h2 class="title heading-font">Inside the Project</h2>
+                            <h2 class="title">Inside the <span class="heading-font">Project</span></h2>
 
                             <?php if (!empty($project_video_thumbnail)): ?>
                                 <div class="project-video-thumbnail">
