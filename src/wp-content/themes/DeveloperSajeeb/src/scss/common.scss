@@ -78,7 +78,7 @@ body {
     border-radius: 15px;
     padding: 16px 35px;
     background-color: vars.$secondary-light;
-    color: vars.$color-white;
+    color: vars.$color-gray;
     transition: all 0.3s ease-in-out;
     display: inline-flex;
     align-items: center;
@@ -87,6 +87,7 @@ body {
 
     &:hover {
         border: 2px solid vars.$primary-color;
+        color: vars.$color-white;
     }
 
     svg {

@@ -124,59 +124,7 @@ $frontpage_id = get_option('page_on_front');
                     <h4 class="subtitle heading-font">News & Blog</h4>
                     <h2 class="title">Latest News & <span class="text-primary-color">Blog</span></h2>
                 </div>
-
-                <!-- <div class="blog-items-wrap">
-
-                    <div class="blog-item">
-                        <div class="blog-thumb">
-                            <img src="https://wp.webtend.net/noxfolio/wp-content/uploads/2023/04/blog-09-min-768x417.jpg"
-                                alt="Blog Image">
-                        </div>
-
-                        <div class="blog-item-content">
-                            <p class="category">Divi, WooCommerce, WordPress, Yoast</p>
-                            <p class="blog-item-date heading-font"><span><i
-                                        class="fa-regular fa-calendar-days"></i></span> 17th May 2025</p>
-                            <h5>A Beginner’s Guide to Running Adventures</h5>
-
-                            <a href="<?php echo home_url(); ?>/blog" class="read-more-btn">Read More <span><i
-                                        class="fa-solid fa-link"></i></span></a>
-                        </div>
-                    </div>
-                    <div class="blog-item">
-                        <div class="blog-thumb">
-                            <img src="https://wp.webtend.net/noxfolio/wp-content/uploads/2023/04/blog-09-min-768x417.jpg"
-                                alt="Blog Image">
-                        </div>
-
-                        <div class="blog-item-content">
-                            <p class="category">Divi, WooCommerce, WordPress, Yoast</p>
-                            <p class="blog-item-date heading-font"><span><i
-                                        class="fa-regular fa-calendar-days"></i></span> 17th May 2025</p>
-                            <h5>A Beginner’s Guide to Running Adventures</h5>
-
-                            <a href="<?php echo home_url(); ?>/blog" class="read-more-btn">Read More <span><i
-                                        class="fa-solid fa-link"></i></span></a>
-                        </div>
-                    </div>
-                    <div class="blog-item">
-                        <div class="blog-thumb">
-                            <img src="https://wp.webtend.net/noxfolio/wp-content/uploads/2023/04/blog-09-min-768x417.jpg"
-                                alt="Blog Image">
-                        </div>
-
-                        <div class="blog-item-content">
-                            <p class="category">Divi, WooCommerce, WordPress, Yoast</p>
-                            <p class="blog-item-date heading-font"><span><i
-                                        class="fa-regular fa-calendar-days"></i></span> 17th May 2025</p>
-                            <h5>A Beginner’s Guide to Running Adventures</h5>
-
-                            <a href="<?php echo home_url(); ?>/blog" class="read-more-btn">Read More <span><i
-                                        class="fa-solid fa-link"></i></span></a>
-                        </div>
-                    </div>
-                </div> -->
-
+                
                 <div class="blog-items-wrap">
                     <?php
                     $args = array(
