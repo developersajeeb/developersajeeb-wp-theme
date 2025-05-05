@@ -26,4 +26,7 @@ include_once('inc/theme-options.php');
 
 // Theme Option Page
 include_once('inc/post-type.php');
+
+// Ajax request
+include_once('inc/ajax.php');
 ?>

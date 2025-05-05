@@ -109,7 +109,6 @@ get_header();
         <div class="blog-card-section-wrap container">
             <div class="blog-heading">
                 <ul class="category-list">
-                    <li><a href="#" class="see-all">See All</a></li>
                     <?php
                     $categories = get_categories();
                     if (!empty($categories)):
@@ -126,14 +125,21 @@ get_header();
                     endif;
                     ?>
                 </ul>
+                <form role="search" method="get" class="blog-search-wrap" action="<?php echo home_url('/'); ?>">
+                    <input type="search" placeholder="Search blog posts" name="s" id="blog-search-input"
+                        value="<?php echo get_search_query(); ?>">
+                    <button type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
+                </form>
             </div>
 
-            <div class="blog-cards">
+            <div class="blog-cards" id="blog-posts-container">
                 <?php
                 $args = array(
+                    'posts_per_page' => 12,
                     'post_type' => 'post',
                 );
                 $latest_posts = new WP_Query($args);
+                $total_posts = wp_count_posts()->publish;
 
                 if ($latest_posts->have_posts()):
                     while ($latest_posts->have_posts()):
@@ -165,12 +171,43 @@ get_header();
                         <?php
                     endwhile;
                 else:
-                    echo '<p>No blog posts found.</p>';
+                    echo '<p class="no-more-blog-posts">No blog posts found.</p>';
                 endif;
 
                 // Reset Post Data
                 wp_reset_postdata();
                 ?>
+            </div>
+
+            <?php if ($total_posts > 12): ?>
+                <div class="loading-btn" data-taxonomy="" data-term-id="">
+                    <button class="primary-color-btn load-more-btn">Load More</button>
+                    <div class="blog-load-more-btn-loader blog-loader" style="display:none;"></div>
+                </div>
+
+                <p class="no-more-blog-posts" style="display:none;">No more blog here.</p>
+            <?php endif; ?>
+
+            <div class="mobile-bottom-side-ctg">
+                <h4 class="heading-font">Categories</h4>
+
+                <ul class="category-list">
+                    <?php
+                    $categories = get_categories();
+                    if (!empty($categories)):
+                        $first = true; // Variable to check if it's the first category
+                        foreach ($categories as $category):
+                            $class = ($first) ? 'class="selected"' : '';
+                            $first = false; // After the first iteration, set to false
+                            ?>
+                            <li><a href="<?php echo get_category_link($category->term_id); ?>" <?php echo $class; ?>><?php echo $category->name; ?></a></li>
+                            <?php
+                        endforeach;
+                    else:
+                        echo '<li>No categories found.</li>';
+                    endif;
+                    ?>
+                </ul>
             </div>
         </div>
     </section>

@@ -202,11 +202,63 @@ document.addEventListener("DOMContentLoaded", function () {
     Fancybox.bind('[data-fancybox="portfolio-thumbnail"]', {
         buttons: [
             "zoom",
-            "fullScreen",,
+            "fullScreen", ,
             "close"
         ],
         loop: false,
         protect: true
     });
 
+});
+
+// Blog Ajax Request
+document.addEventListener("DOMContentLoaded", function () {
+    let page = 2;
+
+    const btnContainers = document.querySelectorAll('.loading-btn');
+    const noMorePosts = document.querySelectorAll('.no-more-blog-posts');
+
+    btnContainers.forEach((btnContainer, index) => {
+        const btn = btnContainer.querySelector('.load-more-btn');
+        const loader = btnContainer.querySelector('.blog-loader');
+        const taxonomy = btnContainer.dataset.taxonomy;
+        const term_id = btnContainer.dataset.termId;
+
+        btn.addEventListener('click', function () {
+            btn.style.display = 'none';
+            loader.style.display = 'inline-block';
+
+            const data = new FormData();
+            data.append('action', 'load_more_posts');
+            data.append('page', page);
+            data.append('taxonomy', taxonomy);
+            data.append('term_id', term_id);
+
+            fetch(blog_ajax_object.ajax_url, {
+                method: 'POST',
+                body: data
+            })
+                .then(res => res.text())
+                .then(response => {
+                    const trimmedData = response.trim();
+
+                    if (trimmedData === 'no_more') {
+                        noMorePosts[index].style.display = 'block';
+                        btnContainer.style.display = 'none';
+                    } else {
+                        document.getElementById('blog-posts-container')
+                            .insertAdjacentHTML('beforeend', trimmedData);
+
+                        page++;
+                        btn.style.display = 'inline-block';
+                        loader.style.display = 'none';
+                    }
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                    btn.style.display = 'inline-block';
+                    loader.style.display = 'none';
+                });
+        });
+    });
 });

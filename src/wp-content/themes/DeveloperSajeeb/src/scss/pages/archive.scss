@@ -1,0 +1,24 @@
+// Variables
+@use "variables" as vars;
+
+.category-blog-section-container {
+    padding-top: 140px;
+
+    @media screen and (max-width: 1024px) {
+        padding-top: 120px;
+    }
+
+    @media screen and (max-width: 767px) {
+        padding-top: 90px;
+    }
+
+    .archive-page-hero {
+        padding-top: 58px;
+        padding-bottom: 70px;
+
+        h2 {
+            margin: 0px 0px 12px 0px;
+            font-size: 28px;
+        }
+    }
+}
