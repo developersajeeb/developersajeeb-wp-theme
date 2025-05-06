@@ -178,64 +178,6 @@
                     display: none;
                 }
             }
-
-            .blog-search-wrap {
-                display: flex;
-                position: relative;
-                max-width: 300px;
-                width: 100%;
-
-                @media screen and (max-width: 1024px) {
-                    max-width: 100%;
-                }
-
-                input {
-                    border: 1px solid vars.$gray-border-color;
-                    padding: 15px 54px 15px 22px;
-                    border-radius: 30px;
-                    background-color: vars.$secondary-light;
-                    color: vars.$color-white;
-                    font-size: 14px;
-                    transition: 0.3s all;
-                    width: 100%;
-
-                    &::placeholder {
-                        color: vars.$color-gray;
-                    }
-
-                    &:focus {
-                        outline: none;
-                        border: 1px solid vars.$primary-color;
-                    }
-
-                    &:hover {
-                        border: 1px solid vars.$primary-color;
-                    }
-                }
-
-                button {
-                    background-color: vars.$primary-dark;
-                    border: none;
-                    color: vars.$primary-color;
-                    border-radius: 30px;
-                    font-size: 14px;
-                    width: 40px;
-                    height: 40px;
-                    display: flex;
-                    align-items: center;
-                    justify-content: center;
-                    cursor: pointer;
-                    transition: 0.3s all;
-                    position: absolute;
-                    right: 4px;
-                    top: 4px;
-
-                    &:hover {
-                        background-color: vars.$primary-color;
-                        color: vars.$primary-dark;
-                    }
-                }
-            }
         }
 
         .blog-cards {
@@ -321,6 +263,65 @@
 
         100% {
             transform: rotate(360deg);
+        }
+    }
+}
+
+// Blog search input
+.blog-search-wrap {
+    display: flex;
+    position: relative;
+    max-width: 300px;
+    width: 100%;
+
+    @media screen and (max-width: 1024px) {
+        max-width: 100%;
+    }
+
+    input {
+        border: 1px solid vars.$gray-border-color;
+        padding: 15px 54px 15px 22px;
+        border-radius: 30px;
+        background-color: vars.$secondary-light;
+        color: vars.$color-white;
+        font-size: 14px;
+        transition: 0.3s all;
+        width: 100%;
+
+        &::placeholder {
+            color: vars.$color-gray;
+        }
+
+        &:focus {
+            outline: none;
+            border: 1px solid vars.$primary-color;
+        }
+
+        &:hover {
+            border: 1px solid vars.$primary-color;
+        }
+    }
+
+    button {
+        background-color: vars.$primary-dark;
+        border: none;
+        color: vars.$primary-color;
+        border-radius: 30px;
+        font-size: 14px;
+        width: 40px;
+        height: 40px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        transition: 0.3s all;
+        position: absolute;
+        right: 4px;
+        top: 4px;
+
+        &:hover {
+            background-color: vars.$primary-color;
+            color: vars.$primary-dark;
         }
     }
 }
