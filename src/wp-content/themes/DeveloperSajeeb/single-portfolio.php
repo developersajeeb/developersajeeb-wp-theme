@@ -83,6 +83,8 @@
                                     <a href="<?php echo esc_url($image['url']); ?>" data-fancybox="portfolio-thumbnail">
                                         <img class="inner-img" src="<?php echo esc_url($image['url']); ?>"
                                             alt="<?php echo esc_attr($image['alt']); ?>">
+                                    
+                                        <span><i class="fa-solid fa-up-right-and-down-left-from-center"></i></span>
                                     </a>
                                 <?php endforeach; ?>
                             </div>
