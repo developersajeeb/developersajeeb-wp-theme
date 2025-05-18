@@ -45,15 +45,37 @@
                     </div>
 
                     <?php
-                    $project_video_thumbnail = get_field('live_link');
-                    if (!empty($project_video_thumbnail)):
-                        ?>
-                        <div class="live-link">
-                            <a class="primary-color-btn" href="<?php echo esc_url($project_video_thumbnail); ?>" target="_blank">Go
-                                Live <span><i class="fa-solid fa-arrow-up-right-from-square"></i></span></a>
+                    $out_links = get_field('out_links');
+                    $live_link = $out_links['live_link'] ?? '';
+                    $dribbble = $out_links['dribbble'] ?? '';
+                    $github = $out_links['github'] ?? '';
+                    $client_side = $out_links['client_side'] ?? '';
+                    $server_side = $out_links['server_side'] ?? '';
+                    $github_links = $out_links['github_links'] ?? [];
+                    
+                    if (!empty($out_links)): ?>
+                        <div class="out-links">
+                            <?php if (!empty($live_link)): ?>
+                                <a class="live-btn" href="<?php echo esc_url($live_link); ?>" target="_blank">Go Live</a>
+                            <?php endif; ?>
+
+                            <?php if (!empty($dribbble)): ?>
+                                <a class="dribbble-btn" href="<?php echo esc_url($dribbble); ?>" target="_blank">Dribbble</a>
+                            <?php endif; ?>
+
+                            <?php if (in_array('Github', $github_links) && !empty($github)): ?>
+                                <a class="github-btn" href="<?php echo esc_url($github); ?>" target="_blank">GitHub</a>
+                            <?php endif; ?>
+
+                            <?php if (in_array('Client Side', $github_links) && !empty($client_side)): ?>
+                                <a class="github-btn" href="<?php echo esc_url($client_side); ?>" target="_blank">GitHub Client Side</a>
+                            <?php endif; ?>
+
+                            <?php if (in_array('Server Side', $github_links) && !empty($server_side)): ?>
+                                <a class="github-btn" href="<?php echo esc_url($server_side); ?>" target="_blank">GitHub Server Side</a>
+                            <?php endif; ?>
                         </div>
-                    <?php endif;
-                    ?>
+                    <?php endif; ?>
 
                     <?php
                     $project_video_thumbnail = get_field('project_video_thumbnail');
@@ -83,7 +105,7 @@
                                     <a href="<?php echo esc_url($image['url']); ?>" data-fancybox="portfolio-thumbnail">
                                         <img class="inner-img" src="<?php echo esc_url($image['url']); ?>"
                                             alt="<?php echo esc_attr($image['alt']); ?>">
-                                    
+
                                         <span><i class="fa-solid fa-up-right-and-down-left-from-center"></i></span>
                                     </a>
                                 <?php endforeach; ?>
@@ -135,7 +157,8 @@
                         <img class="sidebar-cta-bg" src="<?php echo get_template_directory_uri(); ?>/img/glop-black-bg.webp"
                             alt="">
                         <div class="cta-content">
-                            <h3>Bring Your Vision to Life – Expert <span class="heading-font">Web Development</span> Awaits!</h3>
+                            <h3>Bring Your Vision to Life – Expert <span class="heading-font">Web Development</span> Awaits!
+                            </h3>
                             <a href="<?php echo esc_url(home_url('/contact')); ?>" class="secondary-gray-btn">Contact Now
                                 <span><i class="fa-solid fa-chevron-right"></i></span></a>
                         </div>

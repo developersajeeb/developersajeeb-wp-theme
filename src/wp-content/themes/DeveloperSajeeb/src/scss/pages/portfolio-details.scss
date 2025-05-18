@@ -2,7 +2,7 @@
 @use "variables" as vars;
 
 .portfolio-details-container {
-    padding: 160px 0px 120px 0px;
+    padding: 140px 0px 120px 0px;
 
     @media screen and (max-width: 1024px) {
         padding-top: 140px;
@@ -218,14 +218,40 @@
                 }
             }
 
-            .live-link {
+            .out-links {
                 margin-top: 30px;
 
                 a {
-                    max-width: 200px;
-                    width: 100%;
-                    text-align: center;
-                    border-radius: 30px;
+                    margin-right: 6px;
+                    margin-top: 8px;
+                    font-size: 15px;
+                    font-weight: 600;
+                    line-height: 1.3;
+                    text-transform: capitalize;
+                    text-decoration: none;
+                    border: none;
+                    border-radius: 50px;
+                    padding: 16px 35px;
+                    background-color: vars.$primary-color;
+                    color: vars.$secondary-dark;
+                    transition: all 0.3s ease-in-out;
+                    display: inline-flex;
+                    align-items: center;
+                    justify-content: center;
+                    gap: 8px;
+                }
+
+                .dribbble-btn {
+                    background-color: #ea4c89;
+                    color: vars.$color-white;
+                    font-weight: 500;
+                }
+                
+                .github-btn {
+                    background-color: #14191E;
+                    border: 1px solid vars.$gray-border-color;
+                    color: vars.$color-white;
+                    font-weight: 500;
                 }
             }
 
