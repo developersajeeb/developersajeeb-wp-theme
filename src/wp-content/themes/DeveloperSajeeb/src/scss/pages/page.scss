@@ -1,0 +1,65 @@
+// Variables
+@use "variables" as vars;
+
+.default-page-container {
+    padding: 180px 0px 120px 0px;
+
+    @media screen and (max-width: 1024px) {
+        padding-top: 140px;
+        padding-bottom: 90px;
+    }
+
+    @media screen and (max-width: 767px) {
+        padding-bottom: 56px;
+    }
+
+    .body-content {
+        padding-top: 80px;
+        color: vars.$color-gray;
+        font-size: 16px;
+        line-height: 28px;
+
+        p {
+            margin-bottom: 20px;
+        }
+
+        a {
+            color: vars.$primary-color;
+            text-decoration: underline;
+        }
+
+        ul {
+            padding-left: 16px;
+
+            li {
+                line-height: 32px;
+            }
+
+            p {
+                margin: 0px;
+            }
+        }
+
+        blockquote {
+            border-left: 4px solid;
+            padding: 12px 12px 12px 18px;
+            background-color: #1c1c1c;
+            margin: 15px 0px;
+        }
+
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            color: vars.$color-white;
+            margin: 25px 0px 15px 0px;
+            font-weight: 500;
+        }
+
+        @media screen and (max-width: 767px) {
+            padding-top: 60px;
+        }
+    }
+}

@@ -3,15 +3,17 @@ $portfolio_posts_count = get_query_var('portfolio_posts_count', -1);
 ?>
 
 <div class="container">
-    <ul class="portfolios-category">
-        <li class="filter active" data-filter="all">All</li>
-        <?php
-        $categories = get_terms('portfolio_category');
-        foreach ($categories as $category) {
-            echo '<li class="filter" data-filter="' . $category->slug . '">' . $category->name . '</li>';
-        }
-        ?>
-    </ul>
+    <?php if (!is_front_page()): ?>
+        <ul class="portfolios-category">
+            <li class="filter active" data-filter="all">All</li>
+            <?php
+            $categories = get_terms('portfolio_category');
+            foreach ($categories as $category) {
+                echo '<li class="filter" data-filter="' . $category->slug . '">' . $category->name . '</li>';
+            }
+            ?>
+        </ul>
+    <?php endif; ?>
 
     <div class="portfolio-items-wrap">
         <?php
